@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.9 — Estilo Cyberpunk 2077 *(2026-05-28)*
+- **Botones de pestaña** — rediseñados con borde izquierdo ambar + glow y gradiente en active/hover (inspirado CP2077)
+- **Retrato +2px más ancho** — `calc(4rem + 2px)` para mejor proporción
+- **Fondo glass** — ventana al 25% de opacidad con `backdrop-filter: blur(6px)` para efecto HUD oscuro cyberpunk
+- **Texto de herida oculto** — "Nivel de herido" eliminado; solo el corazón con tooltip al hover
+- **Tamaño input nombre/rol corregido** — `0.7rem` para evitar desborde
+
 ### v1.0.8 — Death Save UI Fix *(2026-05-28)*
 - **Alineación de death save corregida** — se agregó `display: flex`, `align-items: center` y espaciado explícito
 - **Botón de restablecer penalizador restaurado** — el icono `fa-arrow-rotate-left` ahora es visible con `cursor: pointer`

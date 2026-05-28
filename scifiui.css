@@ -2523,7 +2523,8 @@ a[data-action="delete"] {
 
 /* --- Window-app wrapper --- */
 .character-vertical-sheet .window-content {
-  background: var(--nv-bg-nearblack) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(6px) !important;
 }
 
 .character-vertical-sheet .sheet-vertical {
@@ -2539,29 +2540,32 @@ a[data-action="delete"] {
 }
 
 .character-vertical-sheet .navtabs-side .tab-button {
-  background: var(--nv-bg-dark) !important;
+  background: transparent !important;
   color: var(--nv-text-dimmed) !important;
   width: 2rem !important;
   height: 2rem !important;
   font-size: 0.85rem !important;
-  border: 1px solid transparent !important;
+  border: none !important;
+  border-left: 2px solid transparent !important;
   clip-path: none !important;
-  border-radius: 3px !important;
-  transition: all 0.15s ease !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
 }
 
 .character-vertical-sheet .navtabs-side .tab-button:hover {
   color: var(--nv-accent-bright) !important;
-  background: var(--nv-bg-nearblack) !important;
-  border-color: var(--nv-accent) !important;
-  text-shadow: 0 0 8px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015) 0%, transparent 100%) !important;
+  border-left-color: var(--nv-accent) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 8px var(--nv-glow-050) !important;
 }
 
 .character-vertical-sheet .navtabs-side .tab-button.active {
   color: var(--nv-accent-bright) !important;
-  background: var(--nv-bg-nearblack) !important;
-  border-color: var(--nv-accent) !important;
-  box-shadow: inset 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020) 0%, transparent 100%) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+  text-shadow: 0 0 6px var(--nv-glow-035) !important;
 }
 
 /* --- Sheet content wrapper --- */
@@ -2575,14 +2579,14 @@ a[data-action="delete"] {
   border-bottom: 1px solid var(--nv-border) !important;
   margin-bottom: 0.25rem !important;
   padding: 0.25rem !important;
-  grid-template-columns: 4rem 1fr 5rem !important;
+  grid-template-columns: calc(4rem + 2px) 1fr 5rem !important;
   gap: 0.125rem !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait {
   background: transparent !important;
   clip-path: none !important;
-  width: 4rem !important;
+  width: calc(4rem + 2px) !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait .profile-img {
@@ -2604,6 +2608,7 @@ a[data-action="delete"] {
   color: var(--nv-accent) !important;
   height: 1.25rem !important;
   font-family: "Tektur", monospace !important;
+  font-size: 0.7rem !important;
 }
 
 .character-vertical-sheet .profile-header .profile-info .profile-name input:focus,
@@ -2639,7 +2644,7 @@ a[data-action="delete"] {
 }
 
 .character-vertical-sheet .profile-header .profile-wound .wound-label {
-  color: var(--nv-text-dimmed) !important;
+  display: none !important;
 }
 
 /* --- Meta section (deathsaves, IP, reputation, eb) --- */
