@@ -105,12 +105,15 @@ button {
 }
 
 button:hover {
-  background: var(--nv-border) !important;
-  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(180deg, var(--nv-glow-015), transparent) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
 }
 
 button:active {
-  background: var(--nv-text-dimmed) !important;
+  background: var(--nv-glow-015) !important;
+  box-shadow: inset 0 0 8px var(--nv-glow-020) !important;
 }
 
 option, optgroup {
@@ -160,15 +163,23 @@ option, optgroup {
 }
 
 #sidebar-tabs > .item.active {
-  color: var(--nv-text-black) !important;
-  background: var(--nv-accent) !important;
-  border-color: var(--nv-accent) !important;
-  box-shadow: 0 0 8px var(--nv-glow-040, rgba(255, 176, 0, 0.4)) !important;
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
 }
 
 #sidebar-tabs > .item:hover {
-  color: var(--nv-accent) !important;
-  border-color: var(--nv-accent) !important;
+  color: var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
 }
 
 .sidebar-tab .directory-header {
@@ -192,14 +203,16 @@ option, optgroup {
 }
 
 .directory-list .directory-item:hover {
-  background: var(--nv-bg-input) !important;
+  background: linear-gradient(90deg, var(--nv-glow-010), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
   color: var(--nv-accent) !important;
 }
 
 .directory-list .directory-item.active {
-  background: var(--nv-bg-dark) !important;
-  color: var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  color: var(--nv-accent-bright) !important;
   border-left: 3px solid var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
 }
 
 /* ==========================================================
@@ -213,6 +226,8 @@ option, optgroup {
 }
 
 .folder > .folder-header:hover {
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
   border-bottom-color: var(--nv-accent) !important;
 }
 
@@ -233,8 +248,8 @@ option, optgroup {
 
 .sidebar-tab .directory-footer button:hover,
 .directory .action-buttons button:hover {
-  background: var(--nv-border) !important;
-  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
 }
 
 /* ==========================================================
@@ -648,15 +663,16 @@ option, optgroup {
 }
 
 .tab-label.active {
-  background-color: var(--nv-accent) !important;
-  color: var(--nv-text-black) !important;
-  border-color: var(--nv-accent) !important;
-  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  color: var(--nv-accent-bright) !important;
+  border: 1px solid var(--nv-accent) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
 }
 
 .tab-label:hover {
-  background-color: var(--nv-bg-dark) !important;
-  color: var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  color: var(--nv-accent-bright) !important;
   border-color: var(--nv-accent) !important;
 }
 
@@ -1480,7 +1496,8 @@ a.reverseDamage:hover,
 a.displayInjury:hover {
   color: var(--nv-accent) !important;
   border-color: var(--nv-accent) !important;
-  box-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030) !important;
   text-shadow: none !important;
 }
 
@@ -1647,8 +1664,9 @@ a.inline-roll .dice-tooltip .dice-rolls .roll {
 
 .dialog-footer .cpr-dialog-button:hover,
 .dialog .dialog-buttons button:hover {
-  background: var(--nv-border) !important;
-  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 10px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
 }
 
 /* ==========================================================
@@ -1814,13 +1832,15 @@ a.inline-roll .dice-tooltip .dice-rolls .roll {
 }
 
 .control-icon:hover {
-  border-color: var(--nv-accent) !important;
-  box-shadow: 0 0 6px var(--nv-glow-020, rgba(255, 176, 0, 0.2)) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-020) !important;
 }
 
 .control-icon.active {
-  border-color: var(--nv-accent) !important;
-  box-shadow: 0 0 8px var(--nv-glow-030, rgba(255, 176, 0, 0.3)), inset 0 0 8px var(--nv-glow-010, rgba(255, 176, 0, 0.1)) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
 }
 
 .dv-table-selector {
@@ -2101,6 +2121,24 @@ a.inline-roll .dice-tooltip .dice-rolls .roll {
   border: 1px solid var(--nv-accent) !important;
 }
 
+#actors-popout button:hover,
+#cards-popout button:hover,
+#chat-popout button:hover,
+#combat-popout button:hover,
+#compendium-popout button:hover,
+#items-popout button:hover,
+#journal-popout button:hover,
+#playlists-popout button:hover,
+#scenes-popout button:hover,
+#settings-popout button:hover,
+#tables-popout button:hover,
+#macros-popout button:hover,
+#ui-right button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
 /* ==========================================================
    63. NOTIFICATIONS / TOASTS
    ========================================================== */
@@ -2156,10 +2194,14 @@ form textarea {
 /* ==========================================================
    65. WINDOW APPLICATION HEADERS / BORDERS
    ========================================================== */
+.window-app {
+  box-shadow: 0 0 0 1px var(--nv-border), 0 0 12px var(--nv-glow-015) !important;
+}
+
 .window-app .window-header {
   background: var(--nv-glass-deep) !important;
   backdrop-filter: var(--nv-glass-blur) !important;
-  border-bottom: 1px solid var(--nv-accent) !important;
+  border-bottom: 2px solid var(--nv-glow-020) !important;
   color: var(--nv-accent) !important;
 }
 
@@ -2173,7 +2215,10 @@ form textarea {
 
 .window-app .window-header a:hover {
   color: var(--nv-accent) !important;
-  text-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  padding-left: 4px !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
 }
 
 .window-app .window-content {
@@ -2277,7 +2322,9 @@ code {
 }
 
 .dice-tray button:hover {
-  color: var(--nv-accent) !important;
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
 }
 
 /* ==========================================================
@@ -2396,10 +2443,14 @@ code {
   background: var(--nv-glass-mid) !important;
   border: 1px solid var(--nv-border) !important;
   color: var(--nv-accent) !important;
+  transition: all 0.15s ease !important;
 }
 
 #players .player:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
   border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
 }
 
 #players .player .player-name {
@@ -2518,6 +2569,128 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
+    76. COMBAT TRACKER
+    ========================================================== */
+#combat {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+#combat .combat-tracker-header {
+  background: var(--nv-bg-nearblack) !important;
+  border-bottom: 1px solid var(--nv-accent) !important;
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+#combat .combat-tracker-header .encounter-title {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combat-tracker-header .encounter-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combat-tracker-header .encounter-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat #combat-tracker .combatant {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  transition: all 0.15s ease !important;
+}
+
+#combat #combat-tracker .combatant:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-020) !important;
+}
+
+#combat #combat-tracker .combatant.active {
+  border-left: 2px solid var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+}
+
+#combat .combatant .token-initiative {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat .combatant .token-name {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combatant .combatant-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#combat .combatant .combatant-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+#combat .combatant .token-image {
+  border: 1px solid var(--nv-border) !important;
+}
+
+#combat-popout button:hover {
+  background: linear-gradient(180deg, var(--nv-glow-015), var(--nv-bg-dark)) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
+    77. HOTBAR
+    ========================================================== */
+#hotbar {
+  background: var(--nv-glass-dark) !important;
+  backdrop-filter: var(--nv-glass-blur) !important;
+  border-top: 1px solid var(--nv-accent) !important;
+  box-shadow: 0 0 12px var(--nv-glow-015) !important;
+}
+
+#hotbar .hotbar-page {
+  background: transparent !important;
+}
+
+#hotbar .macro {
+  background: var(--nv-glass-light) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 2px !important;
+  transition: all 0.15s ease !important;
+}
+
+#hotbar .macro:hover {
+  border-left: 2px solid var(--nv-accent) !important;
+  background: linear-gradient(90deg, var(--nv-glow-015), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030) !important;
+}
+
+#hotbar .macro.active {
+  border-left: 2px solid var(--nv-accent-bright) !important;
+  background: linear-gradient(90deg, var(--nv-glow-020), transparent) !important;
+  box-shadow: 0 0 8px var(--nv-glow-030), inset 0 0 6px var(--nv-glow-015) !important;
+}
+
+#hotbar .macro .macro-key {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 4px var(--nv-glow-020) !important;
+}
+
+#hotbar .bar-controls a {
+  color: var(--nv-accent) !important;
+}
+
+#hotbar .bar-controls a:hover {
+  color: var(--nv-accent-bright) !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+}
+
+/* ==========================================================
     75. VERTICAL CHARACTER SHEET — 625×690
     ========================================================== */
 
@@ -2579,14 +2752,19 @@ a[data-action="delete"] {
   border-bottom: 1px solid var(--nv-border) !important;
   margin-bottom: 0.25rem !important;
   padding: 0.25rem !important;
-  grid-template-columns: calc(4rem + 2px) 1fr 5rem !important;
+  grid-template-columns: calc(4rem + 6px) 1fr 5rem !important;
+  grid-template-areas:
+    "portrait info  meta"
+    "portrait stats stats"
+    "portrait stats stats" !important;
   gap: 0.125rem !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait {
   background: transparent !important;
   clip-path: none !important;
-  width: calc(4rem + 2px) !important;
+  position: relative !important;
+  width: calc(4rem + 6px) !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait .profile-img {
@@ -2639,12 +2817,28 @@ a[data-action="delete"] {
   color: var(--nv-text-hint) !important;
 }
 
-.character-vertical-sheet .profile-header .profile-wound {
-  align-self: end !important;
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound {
+  position: absolute !important;
+  bottom: 0.188rem !important;
+  right: 0.188rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.125rem !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  padding: 0.063rem 0.125rem !important;
+  border-radius: 2px !important;
+  z-index: 2 !important;
+  line-height: 1 !important;
 }
 
-.character-vertical-sheet .profile-header .profile-wound .wound-label {
-  display: none !important;
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound .wound-value {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.063rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-wound img {
+  display: block !important;
 }
 
 /* --- Meta section (deathsaves, IP, reputation, eb) --- */

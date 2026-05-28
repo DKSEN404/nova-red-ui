@@ -4,6 +4,16 @@
     {{#if isHardened.value}}
       <i class="fa-solid fa-shield overlay" data-tooltip="{{localize 'CPR.characterSheet.leftPane.hardened.reasons.isHardened'}}<hr/>{{#each isHardened.reasons as |reason|}}<p>{{reason}}</p>{{/each}}"></i>
     {{/if}}
+    <div class="profile-wound">
+      <span class="wound-value">
+        {{#with actor.system.derivedStats.currentWoundState as |state|}}
+          {{#if (cprCompare state "===" "notWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_none.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.notWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "lightlyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_lightly.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.lightlyWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "seriouslyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_seriously.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.seriouslyWounded"}}"/>{{/if}}
+          {{#if (cprCompare state "===" "mortallyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_mortally.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.mortallyWounded"}}"/>{{/if}}
+        {{/with}}
+      </span>
+    </div>
   </div>
   <div class="profile-info">
     <div class="profile-name">
@@ -31,17 +41,6 @@
       <input class="hum-value" name="system.derivedStats.humanity.max" type="number" value="{{actor.system.derivedStats.humanity.max}}" step="1"/>
       <a class="calculate-humanity" data-tooltip="{{localize "CPR.characterSheet.leftPane.calculateMaxHumanity"}}"><i class="fa-solid fa-calculator"></i></a>
     </div>
-  </div>
-  <div class="profile-wound">
-    <span class="wound-label">{{localize "CPR.characterSheet.leftPane.woundState"}}:</span>
-    <span class="wound-value">
-      {{#with actor.system.derivedStats.currentWoundState as |state|}}
-        {{#if (cprCompare state "===" "notWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_none.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.notWounded"}}"/>{{/if}}
-        {{#if (cprCompare state "===" "lightlyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_lightly.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.lightlyWounded"}}"/>{{/if}}
-        {{#if (cprCompare state "===" "seriouslyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_seriously.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.seriouslyWounded"}}"/>{{/if}}
-        {{#if (cprCompare state "===" "mortallyWounded")}}<img src="systems/cyberpunk-red-core/icons/hud/wounded_mortally.svg" width="20" height="20" data-tooltip="{{localize "CPR.global.woundState.mortallyWounded"}}"/>{{/if}}
-      {{/with}}
-    </span>
   </div>
   <div class="profile-meta">
     <div class="profile-reputation">

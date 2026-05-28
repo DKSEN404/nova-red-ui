@@ -59,6 +59,14 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.10 — CP2077 Glow + Combat Tracker + Hotbar *(2026-05-28)*
+- **Wound indicator moved over portrait** — heart icon positioned bottom-right (opposite shield); portrait spans 3 grid rows
+- **Portrait wider** — `calc(4rem + 6px)` for better proportion; wound overlay has semi-transparent dark bg
+- **CP2077 glow consistency** — sidebar tabs, directory items, folder headers, sheet tabs, HUD controls, chat action links, dialog buttons, player list, popout buttons, dice tray — all use `border-left: 2px solid --nv-accent` + `linear-gradient` + `box-shadow` glow on hover/active
+- **Window chrome** — `.window-app` gets subtle outer glow; header border-bottom uses `--nv-glow-020`; header buttons get left-border glow
+- **Combat Tracker** — full CP2077 styling: glass bg, amber border, combatant entries with left-border glow + gradient on hover/active, initiative text glow
+- **Hotbar** — full CP2077 styling: glass bg, amber top-border, macro slots with left-border glow + gradient on hover/active, macro-key text glow
+
 ### v1.0.9 — Cyberpunk 2077 Styling *(2026-05-28)*
 - **Tab buttons** — redesigned with left amber border glow + gradient on active/hover (CP2077 inspired)
 - **Portrait +2px wider** — `calc(4rem + 2px)` for better proportion
