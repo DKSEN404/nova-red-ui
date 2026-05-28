@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.6 — Pure CSS Theme *(2026-05-28)*
+- **Monkey-patch removed** — the module no longer overrides character/mook sheet templates or forces vertical layout
+- **Pure CSS theme** — works as a visual overlay only, without modifying system sheet behavior
+- **Vertical layout CSS removed** — orphaned sections 7b (Glass Effect) eliminated from the stylesheet
+- **Partial registration preserved** — templates remain available for system compatibility
+- **Note:** Actor sheets return to the native Cyberpunk RED Core horizontal layout
+
 ### v1.0.5 — Player UI & Semantic Colors *(2026-05-28)*
 - **Player List** — sidebar `#players` estilizado con glass, bordes y hover
 - **Player Config** — ventana de permisos con grilla, selects y botón aceptar en verde

@@ -36,44 +36,4 @@ Hooks.on("init", async () => {
     Handlebars.partials[moduleKey("mook/cpr-mook-tab2")]
   );
 
-  const patchTemplate = (cls, path) => {
-    if (!cls) return;
-    Object.defineProperty(cls.prototype, "template", {
-      get() { return `${modulePath}/templates/actor/${path}.hbs`; },
-      configurable: true,
-      enumerable: true,
-    });
-  };
-
-  try {
-    const charCls = CONFIG.Actor.sheetClasses.character?.["cyberpunk-red-core.CPRCharacterActorSheet"]?.cls;
-    if (charCls) {
-      Object.defineProperty(charCls.prototype, "template", {
-        get() { return `${modulePath}/templates/actor/cpr-character-sheet.hbs`; },
-        configurable: true,
-        enumerable: true,
-      });
-    }
-  } catch (e) {
-    console.warn("Nova Red UI: Could not patch character sheet template", e);
-  }
-
-  try {
-    const mookCls = CONFIG.Actor.sheetClasses.character?.["cyberpunk-red-core.CPRMookActorSheet"]?.cls;
-    if (mookCls && Object.getOwnPropertyDescriptor(mookCls.prototype, "template")) {
-      const origGet = Object.getOwnPropertyDescriptor(mookCls.prototype, "template").get;
-      Object.defineProperty(mookCls.prototype, "template", {
-        get() {
-          if (origGet && !game.user.isGM && this.actor.limited) {
-            return origGet.call(this);
-          }
-          return `${modulePath}/templates/actor/cpr-mook-sheet.hbs`;
-        },
-        configurable: true,
-        enumerable: true,
-      });
-    }
-  } catch (e) {
-    console.warn("Nova Red UI: Could not patch mook sheet template", e);
-  }
 });
