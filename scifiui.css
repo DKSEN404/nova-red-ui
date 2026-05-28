@@ -2647,8 +2647,13 @@ a[data-action="delete"] {
 .character-vertical-sheet .profile-header .profile-meta .profile-ip,
 .character-vertical-sheet .profile-header .profile-meta .profile-reputation,
 .character-vertical-sheet .profile-header .profile-meta .profile-eb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
   background: var(--nv-bg-input) !important;
   border: 1px solid var(--nv-bg-dark) !important;
+  padding: 0.1rem 0.25rem !important;
+  border-radius: 2px !important;
 }
 
 .character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-label,
@@ -2656,10 +2661,14 @@ a[data-action="delete"] {
 .character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-label,
 .character-vertical-sheet .profile-header .profile-meta .profile-eb .eb-label {
   color: var(--nv-text-dimmed) !important;
+  white-space: nowrap !important;
 }
 
 .character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-value {
   color: var(--nv-color-danger) !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  cursor: default !important;
 }
 
 .character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up,
@@ -2668,6 +2677,7 @@ a[data-action="delete"] {
 .character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-open-ledger,
 .character-vertical-sheet .profile-header .profile-meta .profile-eb .eurobucks-open-ledger {
   color: var(--nv-text-hint) !important;
+  cursor: pointer !important;
 }
 
 .character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up:hover,

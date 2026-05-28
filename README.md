@@ -59,6 +59,11 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.8 — Death Save UI Fix *(2026-05-28)*
+- **Fixed death save alignment** in the vertical sheet — added explicit `display: flex`, `align-items: center`, and proper spacing
+- **Reset penalty button restored** — `fa-arrow-rotate-left` icon now visible with `cursor: pointer`
+- **Consistent meta items** — IP, reputation, and eurobucks rows now share the same flex layout as death save
+
 ### v1.0.7 — Personaje (Vertical) *(2026-05-28)*
 - **New sheet style**: "Nova-Red: Personaje (Vertical)" selectable from the actor sheet style menu
 - **Dimensions 625×690** — compact sheet optimized for narrow screens

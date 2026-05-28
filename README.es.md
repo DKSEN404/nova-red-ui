@@ -59,6 +59,11 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.8 — Death Save UI Fix *(2026-05-28)*
+- **Alineación de death save corregida** — se agregó `display: flex`, `align-items: center` y espaciado explícito
+- **Botón de restablecer penalizador restaurado** — el icono `fa-arrow-rotate-left` ahora es visible con `cursor: pointer`
+- **Items de meta consistentes** — IP, reputación y eurobucks ahora comparten el mismo layout flex que death save
+
 ### v1.0.7 — Personaje (Vertical) *(2026-05-28)*
 - **Nuevo estilo de hoja**: "Nova-Red: Personaje (Vertical)" seleccionable desde el menú de estilo de hoja del actor
 - **Dimensiones 625×690** — hoja compacta optimizada para pantallas estrechas
