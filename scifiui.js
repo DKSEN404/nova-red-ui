@@ -1,40 +1,19 @@
-Hooks.on("init", async () => {
-  const modulePath = "modules/nova-red-ui";
+Hooks.on("init", function () {
+  const mod = (rel) => `modules/nova-red-ui/templates/actor/${rel}`;
+  const sys = (rel) => `systems/cyberpunk-red-core/templates/actor/${rel}`;
 
-  const myTemplates = [
-    `${modulePath}/templates/actor/cpr-character-sheet.hbs`,
-    `${modulePath}/templates/actor/cpr-mook-sheet.hbs`,
-    `${modulePath}/templates/actor/character/cpr-sheet-header.hbs`,
-    `${modulePath}/templates/actor/character/cpr-profile-tab.hbs`,
-    `${modulePath}/templates/actor/character/cpr-rolefight-tab.hbs`,
-    `${modulePath}/templates/actor/mook/cpr-mook-tab1.hbs`,
-    `${modulePath}/templates/actor/mook/cpr-mook-tab2.hbs`,
-  ];
-  await loadTemplates(myTemplates);
+  const loadReg = (moduleRel) =>
+    getTemplate(mod(moduleRel)).then((tpl) => {
+      Handlebars.registerPartial(sys(moduleRel), tpl);
+    });
 
-  const moduleKey = (path) => `${modulePath}/templates/actor/${path}`;
-  const systemKey = (path) => `systems/cyberpunk-red-core/templates/actor/${path}`;
-
-  Handlebars.registerPartial(
-    systemKey("character/cpr-sheet-header"),
-    Handlebars.partials[moduleKey("character/cpr-sheet-header")]
-  );
-  Handlebars.registerPartial(
-    systemKey("character/cpr-profile-tab"),
-    Handlebars.partials[moduleKey("character/cpr-profile-tab")]
-  );
-  Handlebars.registerPartial(
-    systemKey("character/cpr-rolefight-tab"),
-    Handlebars.partials[moduleKey("character/cpr-rolefight-tab")]
-  );
-  Handlebars.registerPartial(
-    systemKey("mook/cpr-mook-tab1"),
-    Handlebars.partials[moduleKey("mook/cpr-mook-tab1")]
-  );
-  Handlebars.registerPartial(
-    systemKey("mook/cpr-mook-tab2"),
-    Handlebars.partials[moduleKey("mook/cpr-mook-tab2")]
-  );
+  Promise.all([
+    loadReg("character/cpr-sheet-header.hbs"),
+    loadReg("character/cpr-profile-tab.hbs"),
+    loadReg("character/cpr-rolefight-tab.hbs"),
+    getTemplate(mod("cpr-character-sheet.hbs")),
+    getTemplate(mod("cpr-mook-sheet.hbs")),
+  ]).catch((e) => console.error("nova-red-ui | template error:", e));
 });
 
 Hooks.once("ready", () => {
