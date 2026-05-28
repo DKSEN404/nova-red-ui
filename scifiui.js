@@ -1,3 +1,5 @@
+import CPRVerticalCharacterSheet from "./scripts/CPRVerticalCharacterSheet.js";
+
 Hooks.on("init", async () => {
   const modulePath = "modules/nova-red-ui";
 
@@ -36,4 +38,9 @@ Hooks.on("init", async () => {
     Handlebars.partials[moduleKey("mook/cpr-mook-tab2")]
   );
 
+  Actors.registerSheet("nova-red-ui", CPRVerticalCharacterSheet, {
+    label: "Nova-Red: Personaje (Vertical)",
+    types: ["character"],
+    makeDefault: false,
+  });
 });

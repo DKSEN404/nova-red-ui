@@ -59,6 +59,14 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.7 — Personaje (Vertical) *(2026-05-28)*
+- **New sheet style**: "Nova-Red: Personaje (Vertical)" selectable from the actor sheet style menu
+- **Dimensions 625×690** — compact sheet optimized for narrow screens
+- **Vertical layout with sidebar** — side tabs (Skills, Role/Combat, Gear, Cyberware, Lifepath, Effects)
+- **Old system header** — exact copy of the inspiration version's header design with portrait, stats bar, HP/humanity, death save, IP, reputation, and eurobucks
+- **Registered via `Actors.registerSheet`** — does not modify the system, player chooses which style to use
+- **Specific CSS** — section 75 with glass/amber styles for the entire vertical sheet
+
 ### v1.0.6 — Pure CSS Theme *(2026-05-28)*
 - **Monkey-patch removed** — the module no longer overrides character/mook sheet templates or forces vertical layout
 - **Pure CSS theme** — works as a visual overlay only, without modifying system sheet behavior

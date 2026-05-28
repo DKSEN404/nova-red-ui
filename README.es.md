@@ -59,6 +59,14 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.0.7 — Personaje (Vertical) *(2026-05-28)*
+- **Nuevo estilo de hoja**: "Nova-Red: Personaje (Vertical)" seleccionable desde el menú de estilo de hoja del actor
+- **Dimensiones 625×690** — hoja compacta optimizada para pantallas estrechas
+- **Layout vertical con sidebar** — pestañas laterales (Habilidades, Rol/Combate, Equipamiento, Cyberware, Vida pasada, Efectos)
+- **Header del viejo sistema** — copia exacta del diseño de header de la versión de inspiración con portrait, stats bar, HP/humanidad, death save, IP, reputación y eurobucks
+- **Registro vía `Actors.registerSheet`** — no modifica el sistema, el jugador elige qué estilo usar
+- **CSS específico** — sección 75 con estilos glass/ámbar para toda la hoja vertical
+
 ### v1.0.6 — Tema CSS Puro *(2026-05-28)*
 - **Monkey-patch eliminado** — el módulo ya no sobreescribe los templates de personaje/mook ni fuerza el layout vertical
 - **Tema CSS puro** — funciona solo como capa visual, sin modificar el comportamiento de las hojas del sistema

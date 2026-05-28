@@ -2516,3 +2516,473 @@ button.delete,
 a[data-action="delete"] {
   color: var(--nv-color-danger) !important;
 }
+
+/* ==========================================================
+    75. VERTICAL CHARACTER SHEET — 625×690
+    ========================================================== */
+
+/* --- Window-app wrapper --- */
+.character-vertical-sheet .window-content {
+  background: var(--nv-bg-nearblack) !important;
+}
+
+.character-vertical-sheet .sheet-vertical {
+  background: transparent !important;
+  grid-template-columns: 2.5rem 1fr !important;
+}
+
+/* --- Sidebar navigation --- */
+.character-vertical-sheet .navtabs-side {
+  background: var(--nv-glass-deep) !important;
+  gap: 0.25rem !important;
+  border-right: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-text-dimmed) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  font-size: 0.85rem !important;
+  border: 1px solid transparent !important;
+  clip-path: none !important;
+  border-radius: 3px !important;
+  transition: all 0.15s ease !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button:hover {
+  color: var(--nv-accent-bright) !important;
+  background: var(--nv-bg-nearblack) !important;
+  border-color: var(--nv-accent) !important;
+  text-shadow: 0 0 8px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.character-vertical-sheet .navtabs-side .tab-button.active {
+  color: var(--nv-accent-bright) !important;
+  background: var(--nv-bg-nearblack) !important;
+  border-color: var(--nv-accent) !important;
+  box-shadow: inset 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* --- Sheet content wrapper --- */
+.character-vertical-sheet .sheet-content-vertical {
+  background: transparent !important;
+}
+
+/* --- Header (profile-header inside vertical) --- */
+.character-vertical-sheet .profile-header {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  margin-bottom: 0.25rem !important;
+  padding: 0.25rem !important;
+  grid-template-columns: 4rem 1fr 5rem !important;
+  gap: 0.125rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait {
+  background: transparent !important;
+  clip-path: none !important;
+  width: 4rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .profile-img {
+  border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .overlay {
+  -webkit-text-stroke-color: var(--nv-border) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info {
+  padding-left: 0.25rem !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-name input,
+.character-vertical-sheet .profile-header .profile-info .profile-role input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  height: 1.25rem !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-name input:focus,
+.character-vertical-sheet .profile-header .profile-info .profile-role input:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-eb,
+.character-vertical-sheet .profile-header .profile-info .profile-hp,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-eb span,
+.character-vertical-sheet .profile-header .profile-info .profile-hp span,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity span {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-hp .hp-value,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity .hum-value {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-info .profile-hp .calculate-hp,
+.character-vertical-sheet .profile-header .profile-info .profile-humanity .calculate-humanity {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-wound {
+  align-self: end !important;
+}
+
+.character-vertical-sheet .profile-header .profile-wound .wound-label {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* --- Meta section (deathsaves, IP, reputation, eb) --- */
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .ip-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-label,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eb-label {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .deathsave-value {
+  color: var(--nv-color-danger) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up,
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-arrow-rotate-left,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .improvement-points-open-ledger,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-open-ledger,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eurobucks-open-ledger {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-circle-up:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-deathsave .fa-arrow-rotate-left:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .improvement-points-open-ledger:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-open-ledger:hover,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eurobucks-open-ledger:hover {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .profile-header .profile-meta .profile-ip .ip-value,
+.character-vertical-sheet .profile-header .profile-meta .profile-reputation .reputation-value,
+.character-vertical-sheet .profile-header .profile-meta .profile-eb .eb-value {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Stats bar --- */
+.character-vertical-sheet .stats-bar {
+  background: transparent !important;
+  margin-bottom: 0 !important;
+  padding: 0.125rem !important;
+  gap: 0.125rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  flex: 1 0 calc(33.33% - 0.125rem) !important;
+  min-width: 2.25rem !important;
+  padding: 0.063rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-label {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.55rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-label:hover {
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-value {
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  width: 1.75rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-of .stat-value {
+  width: 1.25rem !important;
+  font-size: 0.6rem !important;
+}
+
+.character-vertical-sheet .stats-bar .stat-block .stat-of .stat-sep {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.6rem !important;
+}
+
+/* --- Tab content scroll area --- */
+.character-vertical-sheet .tab-content-vertical {
+  background: var(--nv-glass-light) !important;
+  padding: 0.25rem !important;
+}
+
+/* --- Skills section --- */
+.character-vertical-sheet .skills-section .skills-filter-bar {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  height: 1.25rem !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar .fa-xmark {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skills-section .skills-filter-bar .fa-xmark:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Skills list items --- */
+.character-vertical-sheet .items-header {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+  font-size: 0.6rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.character-vertical-sheet .items-list .item {
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+  color: var(--nv-accent) !important;
+  font-size: 0.65rem !important;
+}
+
+.character-vertical-sheet .items-list .item:nth-child(even) {
+  background: var(--nv-glass-mid) !important;
+}
+
+.character-vertical-sheet .items-list .item:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .item-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .item-detail {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skill-mod-value {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .skill-level input,
+.character-vertical-sheet .skill-base {
+  color: var(--nv-accent-bright) !important;
+}
+
+.character-vertical-sheet .skill-favorite {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .skill-favorite.favorite {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Text pills (stat labels inside skills) --- */
+.character-vertical-sheet .text-pill {
+  background: var(--nv-bg-nearblack) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-size: 0.55rem !important;
+}
+
+/* --- Role/Fight tab --- */
+.character-vertical-sheet .rolefight-tab-content .role-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+/* --- Gear tab --- */
+.character-vertical-sheet .gear-tab-data {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .gear-section-header {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .gear-name,
+.character-vertical-sheet .gear-data {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .gear-amount-value {
+  color: var(--nv-accent-bright) !important;
+}
+
+.character-vertical-sheet .gear-amount-input {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* --- Cyberware tab --- */
+.character-vertical-sheet .cyberware-tab .cyberware-list {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .cyberware-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .cyberware-data {
+  color: var(--nv-text-dimmed) !important;
+}
+
+/* --- Effects tab --- */
+.character-vertical-sheet .effects-list {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .effects-category {
+  background: var(--nv-bg-dark) !important;
+  color: var(--nv-text-hint) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .effect {
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .effect:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+.character-vertical-sheet .effect-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .effect-source {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .effect-control {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .effect-control:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Lifepath tab --- */
+.character-vertical-sheet .lifepath-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+}
+
+/* --- Fight tab (weapons & armor grids) --- */
+.character-vertical-sheet .weapon-grid,
+.character-vertical-sheet .armor-grid {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .weapon-name,
+.character-vertical-sheet .armor-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .weapon-info,
+.character-vertical-sheet .armor-1-stats,
+.character-vertical-sheet .armor-2-stats {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .weapon-attack,
+.character-vertical-sheet .weapon-damage {
+  color: var(--nv-color-danger) !important;
+}
+
+.character-vertical-sheet .weapon-actions a,
+.character-vertical-sheet .armor-1-actions a,
+.character-vertical-sheet .armor-2-actions a {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .weapon-actions a:hover,
+.character-vertical-sheet .armor-1-actions a:hover,
+.character-vertical-sheet .armor-2-actions a:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Buttons inside vertical sheet --- */
+.character-vertical-sheet button {
+  background: var(--nv-bg-dark) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet button:hover {
+  border-color: var(--nv-accent) !important;
+  box-shadow: 0 0 6px var(--nv-glow-030, rgba(255, 176, 0, 0.3)) !important;
+}
+
+/* --- Inputs inside vertical sheet --- */
+.character-vertical-sheet input[type="text"],
+.character-vertical-sheet input[type="number"] {
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: "Tektur", monospace !important;
+}
+
+.character-vertical-sheet input[type="text"]:focus,
+.character-vertical-sheet input[type="number"]:focus {
+  border-color: var(--nv-accent) !important;
+}
+
+/* --- Collapsible sections --- */
+.character-vertical-sheet .collapsible .collapse-icon,
+.character-vertical-sheet .collapsible .expand-icon {
+  color: var(--nv-text-hint) !important;
+}
+
+.character-vertical-sheet .collapsible .collapse-icon:hover,
+.character-vertical-sheet .collapsible .expand-icon:hover {
+  color: var(--nv-accent) !important;
+}
+
+/* --- Injury grid --- */
+.character-vertical-sheet .injuries-grid {
+  background: var(--nv-glass-deep) !important;
+}
+
+.character-vertical-sheet .injuries-name {
+  color: var(--nv-accent) !important;
+}
+
+.character-vertical-sheet .injuries-desc {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.character-vertical-sheet .injuries-effects {
+  color: var(--nv-color-danger) !important;
+}
