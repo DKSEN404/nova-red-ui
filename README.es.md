@@ -66,6 +66,7 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 - **Chrome de ventanas** — `.window-app` con glow exterior sutil; header con `border-bottom: 2px solid --nv-glow-020`; botones de header con left-border glow
 - **Combat Tracker** — estilo CP2077 completo: glass bg, borde ambar, entradas con left-border glow + gradient en hover/active, iniciativa con text-shadow glow
 - **Hotbar** — estilo CP2077 completo: glass bg, borde superior ambar, macros con left-border glow + gradient en hover/active, tecla con text-shadow glow
+- **Sección de Heridas Críticas** — agregada a la pestaña Rol & Combate (debajo de habilidades de rol, arriba de armadura/armas) con soporte para crear/editar/borrar/tirar
 
 ### v1.0.9 — Estilo Cyberpunk 2077 *(2026-05-28)*
 - **Botones de pestaña** — rediseñados con borde izquierdo ambar + glow y gradiente en active/hover (inspirado CP2077)
