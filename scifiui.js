@@ -35,7 +35,9 @@ Hooks.on("init", async () => {
     systemKey("mook/cpr-mook-tab2"),
     Handlebars.partials[moduleKey("mook/cpr-mook-tab2")]
   );
+});
 
+Hooks.once("ready", () => {
   const CPRVerticalCharacterSheet = class extends game.cpr.apps.CPRCharacterActorSheet {
     static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
