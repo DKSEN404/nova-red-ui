@@ -1,5 +1,3 @@
-import CPRVerticalCharacterSheet from "./scripts/CPRVerticalCharacterSheet.js";
-
 Hooks.on("init", async () => {
   const modulePath = "modules/nova-red-ui";
 
@@ -37,6 +35,31 @@ Hooks.on("init", async () => {
     systemKey("mook/cpr-mook-tab2"),
     Handlebars.partials[moduleKey("mook/cpr-mook-tab2")]
   );
+
+  const CPRVerticalCharacterSheet = class extends game.cpr.apps.CPRCharacterActorSheet {
+    static get defaultOptions() {
+      return foundry.utils.mergeObject(super.defaultOptions, {
+        height: 690,
+        width: 625,
+        resizable: true,
+        scrollY: [".tab-content-vertical"],
+        tabs: [
+          {
+            navSelector: ".navtabs-side",
+            contentSelector: ".tab-content-vertical",
+            initial: "profile",
+          },
+        ],
+        classes: ["sheet", "actor", "character-vertical-sheet"],
+        template: "modules/nova-red-ui/templates/actor/cpr-character-sheet.hbs",
+      });
+    }
+
+    activateListeners(html) {
+      html.find(".navtabs-side").click(() => this._clearContentFilter());
+      super.activateListeners(html);
+    }
+  };
 
   Actors.registerSheet("nova-red-ui", CPRVerticalCharacterSheet, {
     label: "Nova-Red: Personaje (Vertical)",
