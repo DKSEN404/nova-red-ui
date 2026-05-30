@@ -3034,6 +3034,10 @@ a[data-action="delete"] {
   color: var(--nv-accent) !important;
 }
 
+.character-vertical-sheet .items-list .item-name {
+  overflow: visible !important;
+}
+
 .character-vertical-sheet .item-detail {
   color: var(--nv-text-dimmed) !important;
 }
@@ -3237,4 +3241,52 @@ a[data-action="delete"] {
 
 .character-vertical-sheet .injuries-effects {
   color: var(--nv-color-danger) !important;
+}
+
+/* ==========================================================
+    76. GEAR TAB — INSTALLED UPGRADES / SUB-LIST FIXES
+   ========================================================== */
+
+/* Sub-list items: restore transparent background (system overrides) */
+.items-list .sub-list li.item,
+.items-list .sub-list li {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.items-list .sub-list li.item:hover {
+  background: var(--nv-bg-dark) !important;
+}
+
+/* Toggle chevron: ensure visibility and clickability */
+.items-list .item-name a.toggle-installed-visibility {
+  opacity: 1 !important;
+  flex: 0 0 2rem !important;
+  min-width: 1.2rem !important;
+  cursor: pointer !important;
+}
+
+.items-list .item-name a.toggle-installed-visibility i {
+  color: var(--nv-accent) !important;
+  transition: transform 150ms ease-in-out !important;
+}
+
+.items-list .item-name a.toggle-installed-visibility:hover {
+  opacity: 1 !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* Sub-list container: ensure proper grid layout */
+.items-list .sub-list {
+  min-width: 100% !important;
+  display: grid !important;
+}
+
+/* Sub-list items text color */
+.items-list .sub-list .item-name {
+  color: var(--nv-accent) !important;
+}
+
+.items-list .sub-list .item-detail {
+  color: var(--nv-text-dimmed) !important;
 }

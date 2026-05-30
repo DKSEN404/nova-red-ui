@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.1 — Gear Tab: Fix ítems invisibles con mejoras instaladas *(2026-05-30)*
+- **Fondo de sub-list corregido** — `.items-list .sub-list li` ahora respeta `transparent` en lugar de ser pisado por el glass background de la hoja vertical
+- **Visibilidad del toggle chevron asegurada** — `.toggle-installed-visibility` ahora tiene `opacity: 1`, `color` explícito y glow en hover para garantizar que siempre sea visible y clickeable
+- **Overflow clipping corregido** — `.character-vertical-sheet .items-list .item-name` ahora usa `overflow: visible` para que el botón toggle no se clipee con nombres largos
+- **Grid layout del sub-list corregido** — `.items-list .sub-list` establece explícitamente `display: grid` y `min-width: 100%` para animación expand/colapso confiable
+- **Nueva Sección 76** en `scifiui.css` dedicada a fixes de upgrades instalados/sub-list
+
 ### v1.1.0 — Secciones de Combate Red en Pestaña Rol & Combate *(2026-05-30)*
 - **Toggle Carne/Red** agregado al inicio de la pestaña Rol & Combate cuando hay un cyberdeck equipado
 - **Sección de Habilidades de Interfaz** — scanner, backdoor, cloak, control, eyedee, pathfinder, slide, virus, zap, defensa, velocidad — visible en modo Red

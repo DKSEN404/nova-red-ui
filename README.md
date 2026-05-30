@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.1 — Gear Tab: Fix invisible items with installed upgrades *(2026-05-30)*
+- **Fixed sub-list items background** — `.items-list .sub-list li` now respects `transparent` background instead of being overridden by the vertical sheet's glass background
+- **Fixed toggle chevron visibility** — `.toggle-installed-visibility` now has `opacity: 1`, explicit `color`, and `hover` glow to ensure it's always clickable and visible
+- **Fixed overflow clipping** — `.character-vertical-sheet .items-list .item-name` now uses `overflow: visible` so the toggle button isn't clipped when item names are long
+- **Fixed sub-list grid layout** — `.items-list .sub-list` explicitly sets `display: grid` and `min-width: 100%` for reliable expand/collapse animation
+- **New Section 76** in `scifiui.css` dedicated to installed upgrades/sub-list fixes
+
 ### v1.1.0 — Netrunning Sections in Role & Combat Tab *(2026-05-30)*
 - **Meatspace/Netspace toggle** added to the top of the Role & Combat tab when a cyberdeck is equipped
 - **Interface Abilities section** — scanner, backdoor, cloak, control, eyedee, pathfinder, slide, virus, zap, defense, speed — visible in Netspace mode
