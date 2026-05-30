@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.0 — Netrunning Sections in Role & Combat Tab *(2026-05-30)*
+- **Meatspace/Netspace toggle** added to the top of the Role & Combat tab when a cyberdeck is equipped
+- **Interface Abilities section** — scanner, backdoor, cloak, control, eyedee, pathfinder, slide, virus, zap, defense, speed — visible in Netspace mode
+- **Installed Programs section** — list installed programs grouped by class (booster, defender, blackice, antipersonnel, antiprogram), with rez/de-rez, attack, defense, and damage roll buttons
+- **Rezzed Programs section** — active programs with ATK/DEF/REZ/PER/SPD stats, rez decrement/reset controls, Black ICE attack/defense/damage actions for mooks
+- **CSS updated** — Section 24.5 (Fight State Nav) + Section 25 extended to cover `.rolefight-tab-content` context alongside `.fight-tab`
+
 ### v1.0.10 — CP2077 Glow + Combat Tracker + Hotbar *(2026-05-28)*
 - **Wound indicator moved over portrait** — heart icon positioned bottom-right (opposite shield); portrait spans 3 grid rows
 - **Portrait wider** — `calc(4rem + 6px)` for better proportion; wound overlay has semi-transparent dark bg

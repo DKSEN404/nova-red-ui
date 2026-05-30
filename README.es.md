@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.0 — Secciones de Combate Red en Pestaña Rol & Combate *(2026-05-30)*
+- **Toggle Carne/Red** agregado al inicio de la pestaña Rol & Combate cuando hay un cyberdeck equipado
+- **Sección de Habilidades de Interfaz** — scanner, backdoor, cloak, control, eyedee, pathfinder, slide, virus, zap, defensa, velocidad — visible en modo Red
+- **Sección de Programas Instalados** — lista de programas instalados agrupados por clase (booster, defender, blackice, antipersona, antiprograma), con botones para rezze/derezze, ataque, defensa y daño
+- **Sección de Programas Rezzados** — programas activos con estadísticas ATK/DEF/REZ/PER/SPD, controles de decremento/reset de REZ, acciones de ataque/defensa/daño de Black ICE para mooks
+- **CSS actualizado** — Sección 24.5 (Fight State Nav) + Sección 25 ampliada para cubrir contexto `.rolefight-tab-content` junto a `.fight-tab`
+
 ### v1.0.10 — CP2077 Glow + Combat Tracker + Hotbar *(2026-05-28)*
 - **Indicador de herida sobre el retrato** — corazón en esquina inferior derecha (opuesto al escudo); retrato ocupa 3 filas del grid
 - **Retrato más ancho** — `calc(4rem + 6px)`; overlay de herida con fondo semitransparente oscuro

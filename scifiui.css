@@ -937,14 +937,56 @@ option, optgroup {
 }
 
 /* ==========================================================
-   25. FIGHT TAB — NETSPACE
+    24.5. FIGHT STATE NAV — MEATSPACE / NETSPACE TOGGLE
    ========================================================== */
-.fight-tab .cyberdeck-installed-section .items-header {
+.fight-state-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  padding: 0.25rem 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  background: var(--nv-glass-mid) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-state-nav .fight-state-active {
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+.fight-state-nav .fight-state-sep {
+  color: var(--nv-text-dimmed) !important;
+}
+
+.fight-state-nav a.toggle-fight-state {
+  color: var(--nv-text-hint) !important;
+  cursor: pointer !important;
+}
+
+.fight-state-nav a.toggle-fight-state:hover {
+  color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-050, rgba(255, 176, 0, 0.5)) !important;
+}
+
+/* ==========================================================
+    25. NETSPACE — NETRUNNING SECTIONS (Fight Tab & Role+Fight Tab)
+   ========================================================== */
+.fight-tab .interface-abilities-section .items-header,
+.rolefight-tab-content .interface-abilities-section .items-header {
   background-color: var(--nv-bg-dark) !important;
   border-bottom: 1px solid var(--nv-accent-dim) !important;
 }
 
-.fight-tab .cyberdeck-rezzed-section .items-header {
+.fight-tab .cyberdeck-installed-section .items-header,
+.rolefight-tab-content .cyberdeck-installed-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+
+.fight-tab .cyberdeck-rezzed-section .items-header,
+.rolefight-tab-content .cyberdeck-rezzed-section .items-header {
   background-color: var(--nv-bg-dark) !important;
   border-bottom: 1px solid var(--nv-accent-dim) !important;
 }
@@ -968,7 +1010,8 @@ option, optgroup {
   color: var(--nv-accent-dim) !important;
 }
 
-.fight-tab .select-net-role {
+.fight-tab .select-net-role,
+.rolefight-tab-content .select-net-role {
   background-color: var(--nv-bg-input) !important;
   border: 1px solid var(--nv-border) !important;
   color: var(--nv-accent) !important;
