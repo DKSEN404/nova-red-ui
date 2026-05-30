@@ -844,10 +844,30 @@ option, optgroup {
 }
 
 /* ==========================================================
-   22. FIGHT TAB — MEATSPACE
+    22. FIGHT TAB — MEATSPACE
    ========================================================== */
 .fight-tab {
+  display: grid !important;
+  grid-template-areas: "injuries armor weapon" !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  height: 100% !important;
+  gap: 0.15rem !important;
   background-color: var(--nv-glass-dark) !important;
+}
+
+.fight-tab .injuries-section {
+  grid-area: injuries !important;
+  min-height: 100% !important;
+}
+
+.fight-tab .armor-section {
+  grid-area: armor !important;
+  min-height: 100% !important;
+}
+
+.fight-tab .weapon-section {
+  grid-area: weapon !important;
+  min-height: 100% !important;
 }
 
 .fight-tab .section-name {
@@ -861,20 +881,58 @@ option, optgroup {
 }
 
 /* ==========================================================
-   23. WEAPON GRID
+    23. WEAPON GRID
    ========================================================== */
 .weapon-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr 4rem 1.1rem 1.8rem 1.8rem !important;
+  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-areas:
+    "weapon-image weapon-name weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-ammo weapon-mode weapon-actions weapon-attack weapon-damage"
+    "weapon-image weapon-info weapon-mode weapon-actions weapon-attack weapon-damage" !important;
+  height: 3.5rem !important;
+  padding-top: 0.15rem !important;
   border: 1px solid var(--nv-bg-dark) !important;
   margin: 0.15rem !important;
   background: var(--nv-glass-mid) !important;
 }
 
-.weapon-name a {
-  color: var(--nv-accent) !important;
+.weapon-image {
+  grid-area: weapon-image !important;
+}
+
+.weapon-name {
+  grid-area: weapon-name !important;
 }
 
 .weapon-ammo {
+  grid-area: weapon-ammo !important;
   color: var(--nv-text-hint) !important;
+}
+
+.weapon-info {
+  grid-area: weapon-info !important;
+}
+
+.weapon-mode {
+  grid-area: weapon-mode !important;
+}
+
+.weapon-actions {
+  grid-area: weapon-actions !important;
+}
+
+.weapon-attack {
+  grid-area: weapon-attack !important;
+}
+
+.weapon-damage {
+  grid-area: weapon-damage !important;
+}
+
+.weapon-name a {
+  color: var(--nv-accent) !important;
 }
 
 .weapon-info .text-pill {
@@ -907,24 +965,75 @@ option, optgroup {
 }
 
 /* ==========================================================
-   24. ARMOR GRID
+    24. ARMOR GRID
    ========================================================== */
 .armor-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr auto 1.9rem 2.2rem !important;
+  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-areas:
+    "armor-image armor-name armor-name armor-name armor-name"
+    "armor-image armor-1-location armor-1-stats armor-1-type armor-1-actions"
+    "armor-image armor-2-location armor-2-stats armor-2-type armor-2-actions" !important;
+  height: 3.5rem !important;
+  padding-top: 0.15rem !important;
   border: 1px solid var(--nv-bg-dark) !important;
   margin: 0.15rem !important;
   background: var(--nv-glass-mid) !important;
+}
+
+.armor-image {
+  grid-area: armor-image !important;
+}
+
+.armor-name {
+  grid-area: armor-name !important;
+}
+
+.armor-1-location {
+  grid-area: armor-1-location !important;
+}
+
+.armor-2-location {
+  grid-area: armor-2-location !important;
+}
+
+.armor-1-stats {
+  grid-area: armor-1-stats !important;
+}
+
+.armor-2-stats {
+  grid-area: armor-2-stats !important;
+}
+
+.armor-1-type {
+  grid-area: armor-1-type !important;
+}
+
+.armor-2-type {
+  grid-area: armor-2-type !important;
+}
+
+.armor-1-actions {
+  grid-area: armor-1-actions !important;
+}
+
+.armor-2-actions {
+  grid-area: armor-2-actions !important;
 }
 
 .armor-name a {
   color: var(--nv-accent) !important;
 }
 
-.armor-location {
+.armor-1-location,
+.armor-2-location {
   color: var(--nv-text-hint) !important;
   font-size: 0.7rem !important;
 }
 
-.armor-type {
+.armor-1-type,
+.armor-2-type {
   color: var(--nv-text-dimmed) !important;
 }
 
@@ -932,8 +1041,34 @@ option, optgroup {
   color: var(--nv-accent) !important;
 }
 
-.armor-stats {
+.armor-1-stats,
+.armor-2-stats {
   color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+    24.4. INJURIES GRID
+   ========================================================== */
+.injuries-grid {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr 1.2rem !important;
+  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-areas:
+    "injuries-image injuries-name injuries-name"
+    "injuries-image injuries-desc injuries-actions"
+    "injuries-image injuries-effects injuries-effects" !important;
+  height: 3.5rem !important;
+  border: 1px solid var(--nv-bg-dark) !important;
+  margin: 0.15rem !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.injuries-image {
+  grid-area: injuries-image !important;
+}
+
+.injuries-effects {
+  grid-area: injuries-effects !important;
 }
 
 /* ==========================================================
@@ -991,23 +1126,104 @@ option, optgroup {
   border-bottom: 1px solid var(--nv-accent-dim) !important;
 }
 
-.installed-program-name,
-.rezzed-program-name {
+.fight-tab .cyberdeck-installed-section,
+.fight-tab .cyberdeck-rezzed-section,
+.fight-tab .interface-abilities-section {
+  min-height: auto !important;
+}
+
+/* Installed programs grid */
+.cyberdeck-installed-software-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1.875rem 1.875rem !important;
+  grid-template-areas: "program-name program-attack-and-damage program-actions" !important;
+}
+
+.installed-program-name {
+  grid-area: program-name !important;
   color: var(--nv-accent) !important;
 }
 
-.installed-program-attack,
-.installed-program-damage,
-.rezzed-program-per,
-.rezzed-program-spd,
-.rezzed-program-atk,
-.rezzed-program-def,
-.rezzed-program-rez {
+.installed-program-attack-and-damage {
+  grid-area: program-attack-and-damage !important;
+  display: grid !important;
+  grid-template-columns: 0.938rem 0.938rem !important;
+  grid-template-areas: "program-attack program-damage" !important;
+}
+
+.installed-program-attack {
+  grid-area: program-attack !important;
   color: var(--nv-text-hint) !important;
 }
 
+.installed-program-defense {
+  grid-area: program-defense !important;
+}
+
+.installed-program-damage {
+  grid-area: program-damage !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.installed-program-actions {
+  grid-area: program-actions !important;
+}
+
+.installed-program-actions .fa-folder-minus,
 .cyberdeck-installed-software-list .fa-folder-minus {
   color: var(--nv-accent-dim) !important;
+}
+
+/* Rezzed programs grid */
+.cyberdeck-rezzed-software-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1.875rem 1.875rem 1.875rem 1.875rem 1.875rem 4.375rem !important;
+  grid-template-areas: "program-name program-per program-spd program-atk program-def program-rez-and-decrement program-reset" !important;
+}
+
+.rezzed-program-name {
+  grid-area: program-name !important;
+  color: var(--nv-accent) !important;
+}
+
+.rezzed-program-per {
+  grid-area: program-per !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-spd {
+  grid-area: program-spd !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-atk {
+  grid-area: program-atk !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-def {
+  grid-area: program-def !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-rez-and-decrement {
+  grid-area: program-rez-and-decrement !important;
+  display: grid !important;
+  grid-template-columns: 0.938rem 0.938rem !important;
+  grid-template-areas: "program-rez program-rez-decrement" !important;
+}
+
+.rezzed-program-rez {
+  grid-area: program-rez !important;
+  color: var(--nv-text-hint) !important;
+}
+
+.rezzed-program-rez-decrement {
+  grid-area: program-rez-decrement !important;
+}
+
+.rezzed-program-reset {
+  grid-area: program-reset !important;
 }
 
 .fight-tab .select-net-role,
@@ -1018,13 +1234,8 @@ option, optgroup {
 }
 
 /* ==========================================================
-   26. INJURIES GRID
+    26. INJURIES GRID (deprecated — moved to 24.4, kept for compatibility)
    ========================================================== */
-.injuries-grid {
-  border: 1px solid var(--nv-bg-dark) !important;
-  background: var(--nv-glass-mid) !important;
-}
-
 .injuries-name {
   color: var(--nv-accent) !important;
 }
@@ -3068,9 +3279,31 @@ a[data-action="delete"] {
 }
 
 /* --- Role/Fight tab --- */
+.character-vertical-sheet .rolefight-tab-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
 .character-vertical-sheet .rolefight-tab-content .role-section {
   background: var(--nv-glass-mid) !important;
   border: 1px solid var(--nv-border) !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .combat-section {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.25rem !important;
+}
+
+/* Ensure gear tab items with sub-lists wrap properly */
+.character-vertical-sheet .items-list .item.flexrow {
+  flex-wrap: wrap !important;
+}
+
+/* Prevent gear-actions from being clipped */
+.character-vertical-sheet .item-detail.gear-actions {
+  overflow: visible !important;
 }
 
 /* --- Gear tab --- */

@@ -59,6 +59,16 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.2 — Estilizado de pestaña Combate + Fix botones de acción en Gear tab *(2026-05-30)*
+- **Grid layout del Fight tab** — `.fight-tab` ahora usa CSS Grid con `grid-template-areas: "injuries armor weapon"` para layout correcto de Meatspace
+- **Grilla de armas** — CSS Grid completo con áreas `weapon-image`, `weapon-name`, `weapon-ammo`, `weapon-info`, `weapon-mode`, `weapon-actions`, `weapon-attack`, `weapon-damage`
+- **Grilla de armaduras** — CSS Grid completo con áreas `armor-image`, `armor-name`, `armor-1/2-location`, `armor-1/2-stats`, `armor-1/2-type`, `armor-1/2-actions`
+- **Grilla de heridas** — CSS Grid completo con áreas `injuries-image`, `injuries-name`, `injuries-desc`, `injuries-actions`, `injuries-effects`
+- **Grillas de Netrunning** — `.cyberdeck-installed-software-list` y `.cyberdeck-rezzed-software-list` ahora tienen CSS Grid con todas las áreas de programa asignadas
+- **Botones de acción corregidos** — `.character-vertical-sheet .items-list .item.flexrow` ahora usa `flex-wrap: wrap` para evitar desborde del sub-list; `.item-detail.gear-actions` usa `overflow: visible` para que los botones de acción siempre sean accesibles en ítems con upgrades instalados
+- **Layout de pestaña Role/Combate** — `.rolefight-tab-content` y `.combat-section` ahora usan `display: flex; flex-direction: column; gap` para espaciado consistente
+- **Todos los colores usan variables --nv-*** — completamente compatible con Modo Camaleón (adaptable al tema)
+
 ### v1.1.1 — Gear Tab: Fix ítems invisibles con mejoras instaladas *(2026-05-30)*
 - **Fondo de sub-list corregido** — `.items-list .sub-list li` ahora respeta `transparent` en lugar de ser pisado por el glass background de la hoja vertical
 - **Visibilidad del toggle chevron asegurada** — `.toggle-installed-visibility` ahora tiene `opacity: 1`, `color` explícito y glow en hover para garantizar que siempre sea visible y clickeable

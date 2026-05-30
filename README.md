@@ -59,6 +59,16 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.2 — Combat tab styling + Gear tab action buttons fix *(2026-05-30)*
+- **Fight tab grid layout** — `.fight-tab` now uses CSS Grid with `grid-template-areas: "injuries armor weapon"` for proper Meatspace layout
+- **Weapon grid** — complete CSS Grid layout with `weapon-image`, `weapon-name`, `weapon-ammo`, `weapon-info`, `weapon-mode`, `weapon-actions`, `weapon-attack`, `weapon-damage` grid areas
+- **Armor grid** — complete CSS Grid layout with `armor-image`, `armor-name`, `armor-1/2-location`, `armor-1/2-stats`, `armor-1/2-type`, `armor-1/2-actions` grid areas
+- **Injuries grid** — complete CSS Grid layout with `injuries-image`, `injuries-name`, `injuries-desc`, `injuries-actions`, `injuries-effects` grid areas
+- **Netrunning grids** — `.cyberdeck-installed-software-list` and `.cyberdeck-rezzed-software-list` now have proper CSS Grid with all program area assignments
+- **Action buttons fixed** — `.character-vertical-sheet .items-list .item.flexrow` now uses `flex-wrap: wrap` to prevent sub-list overflow; `.item-detail.gear-actions` uses `overflow: visible` so action buttons are always accessible on items with installed upgrades
+- **Rolefight tab layout** — `.rolefight-tab-content` and `.combat-section` now use `display: flex; flex-direction: column; gap` for consistent spacing
+- **All colors use --nv-* variables** — fully compatible with Chameleon Mode (theme-adaptive)
+
 ### v1.1.1 — Gear Tab: Fix invisible items with installed upgrades *(2026-05-30)*
 - **Fixed sub-list items background** — `.items-list .sub-list li` now respects `transparent` background instead of being overridden by the vertical sheet's glass background
 - **Fixed toggle chevron visibility** — `.toggle-installed-visibility` now has `opacity: 1`, explicit `color`, and `hover` glow to ensure it's always clickable and visible
