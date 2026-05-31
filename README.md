@@ -59,6 +59,13 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.7 — Fix: botón resta, ledger detallado, notificación PP verde *(2026-05-31)*
+- **Fix botón resta:** El botón − ahora se habilita al subir una habilidad desde nivel 0 (se actualiza dinámicamente en `_refresh()` según `delta > 0`)
+- **Fix ledger detallado:** El registro de gastos ahora incluye nombres localizados de habilidades/aptitudes y niveles (`Athletics N3→N5`) en lugar de solo el conteo
+- **Fix notificación PP:** La cruz del retrato ahora brilla también cuando IP es exactamente igual al threshold (cambiado `>` a `>=`)
+- **Glow verde:** La animación de pulso de la cruz cambió de color acento (`--nv-accent`) a verde éxito (`--nv-color-success`) para distinguirla visualmente del tema nativo
+- **Nuevas variables CSS:** `--nv-glow-success-{010,020,030,040,050,070}` para glows verdes en distintos niveles de opacidad
+
 ### v1.1.6 — Fix: buttons in PP Upgrade Dialog not responding *(2026-05-31)*
 - **Root cause fixed:** `this.actor.itemTypes.skill.get(id)` and `this.actor.itemTypes.role.get(id)` crash because `itemTypes` stores arrays, not Foundry `Collection` objects
 - **Fix:** Replaced all `.get(id)` with `.find(s => s.id === id)` in `scifiui.js` (6 occurrences in `totalPendingCost`, `_refresh`, and save handler)

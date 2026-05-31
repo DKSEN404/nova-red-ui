@@ -28,6 +28,12 @@
   --nv-color-danger:  var(--cpr-text-chat-failure, #ff2a2a);
   --nv-glow-success:  color-mix(in srgb, var(--nv-color-success) 30%, transparent);
   --nv-glow-danger:   color-mix(in srgb, var(--nv-color-danger) 30%, transparent);
+  --nv-glow-success-010: color-mix(in srgb, var(--nv-color-success) 10%, transparent);
+  --nv-glow-success-020: color-mix(in srgb, var(--nv-color-success) 20%, transparent);
+  --nv-glow-success-030: color-mix(in srgb, var(--nv-color-success) 30%, transparent);
+  --nv-glow-success-040: color-mix(in srgb, var(--nv-color-success) 40%, transparent);
+  --nv-glow-success-050: color-mix(in srgb, var(--nv-color-success) 50%, transparent);
+  --nv-glow-success-070: color-mix(in srgb, var(--nv-color-success) 70%, transparent);
 
   --nv-glow-003: color-mix(in srgb, var(--nv-accent) 3%, transparent);
   --nv-glow-005: color-mix(in srgb, var(--nv-accent) 5%, transparent);
@@ -3548,15 +3554,15 @@ a[data-action="delete"] {
 .character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn.pp-has-points {
   opacity: 1 !important;
   text-shadow:
-    0 0 6px var(--nv-glow-040),
-    0 0 12px var(--nv-glow-030),
-    0 0 20px var(--nv-glow-020) !important;
+    0 0 6px var(--nv-glow-success-040),
+    0 0 12px var(--nv-glow-success-030),
+    0 0 20px var(--nv-glow-success-020) !important;
   animation: pp-pulse 2s ease-in-out infinite !important;
 }
 
 @keyframes pp-pulse {
-  0%, 100% { text-shadow: 0 0 4px var(--nv-glow-050), 0 0 8px var(--nv-glow-030); }
-  50%      { text-shadow: 0 0 8px var(--nv-glow-070), 0 0 16px var(--nv-glow-050), 0 0 24px var(--nv-glow-030); }
+  0%, 100% { text-shadow: 0 0 4px var(--nv-glow-success-050), 0 0 8px var(--nv-glow-success-030); }
+  50%      { text-shadow: 0 0 8px var(--nv-glow-success-070), 0 0 16px var(--nv-glow-success-050), 0 0 24px var(--nv-glow-success-030); }
 }
 
 /* ==========================================================

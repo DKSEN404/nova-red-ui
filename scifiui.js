@@ -93,6 +93,8 @@ Hooks.once("ready", () => {
         const delta = this.changes[id] || 0;
         const newLevel = skill.system.level + delta;
         $row.find(".pp-skill-level").text(newLevel);
+        $row.find(".pp-skill-dec").prop("disabled", delta <= 0);
+        $row.find(".pp-skill-inc").prop("disabled", newLevel >= 10);
         const cost = delta > 0 ? this._calcSkillCost(skill.system.difficulty, skill.system.level, newLevel) : 0;
         $row.find(".pp-skill-cost").text(cost + " PP");
       });
@@ -104,6 +106,8 @@ Hooks.once("ready", () => {
         const delta = this.roleChanges[id] || 0;
         const newRank = role.system.rank + delta;
         $row.find(".pp-role-rank").text(newRank);
+        $row.find(".pp-role-dec").prop("disabled", delta <= 0);
+        $row.find(".pp-role-inc").prop("disabled", newRank >= 10);
         const cost = delta > 0 ? this._calcRoleCost(role.system.rank, newRank) : 0;
         $row.find(".pp-role-cost").text(cost + " PP");
       });
@@ -240,10 +244,26 @@ Hooks.once("ready", () => {
           if (updates.length > 0) {
             await this.actor.updateEmbeddedDocuments("Item", updates);
           }
-          const parts = [];
-          if (Object.keys(this.changes).length > 0) parts.push(`${Object.keys(this.changes).length} habilidad(es)`);
-          if (Object.keys(this.roleChanges).length > 0) parts.push(`${Object.keys(this.roleChanges).length} aptitud(es)`);
-          const reason = `Mejora: ${parts.join(", ")}`;
+          const skillNames = [];
+          for (const [id, delta] of Object.entries(this.changes)) {
+            const s = this.actor.itemTypes.skill.find(x => x.id === id);
+            if (s) {
+              const locKey = Handlebars.helpers.cprGetLocalizedlNameKey(s);
+              const name = game.i18n.localize(locKey);
+              skillNames.push(`${name} (N${s.system.level}→N${s.system.level + delta})`);
+            }
+          }
+          const roleNames = [];
+          for (const [id, delta] of Object.entries(this.roleChanges)) {
+            const r = this.actor.itemTypes.role.find(x => x.id === id);
+            if (r) {
+              const locKey = Handlebars.helpers.cprGetLocalizedlNameKey(r);
+              const name = game.i18n.localize(locKey);
+              roleNames.push(`${name} (Rango ${r.system.rank}→${r.system.rank + delta})`);
+            }
+          }
+          const allParts = [...skillNames, ...roleNames];
+          const reason = `Mejora: ${allParts.join(", ")}`;
           await this.actor.deltaLedgerProperty("improvementPoints", -cost, reason);
           ui.notifications.info(`¡Mejora aplicada correctamente! Se han gastado ${cost} PP.`);
           this.close();
@@ -292,7 +312,7 @@ Hooks.once("ready", () => {
       const ip = this.actor.system.improvementPoints?.value || 0;
       const threshold = this.actor.getFlag("nova-red-ui", "ppThreshold") || 20;
       data.ppThreshold = threshold;
-      if (ip > threshold) {
+      if (ip >= threshold) {
         data.ppHasPoints = true;
       }
       return data;
