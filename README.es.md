@@ -59,9 +59,11 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
-### v1.1.4 — Fix: tabs del diálogo + legibilidad stats *(2026-05-31)*
-- **Fix: Cambio de pestañas** — los tabs de la ventana de mejora ahora cambian correctamente de contenido al hacer clic (estaban inertes en v1.1.3 por falta de `Tabs.bind()` para Foundry v12 legacy)
-- **Fix: Legibilidad guía de estadísticas** — fondo vidrioso (`--nv-glass-mid`) y texto más claro (`--nv-text`, headings `--nv-accent-bright`) para mejor lectura
+### v1.1.5 — Fix: tabs inertes + glow cyberpunk *(2026-05-31)*
+- **Fix: Cambio de pestañas** — los tabs de la ventana de mejora ahora cambian correctamente. Usa `FormApplication` global (legacy) con `this._tabs.forEach(t => t.bind(html[0]))` explícito, siguiendo el patrón del sistema en `CPRActorSheet:318`
+- **Fix: Glow cyberpunk** — todo el texto del diálogo tiene `text-shadow` glow con variables `--nv-glow-*` para legibilidad tipo pantalla
+
+### v1.1.4 — *(saltado — release roto)*
 
 ### v1.1.3 — Indicador de PP + Ventana de Mejora de Personaje *(2026-05-31)*
 - **Botón de notificación de PP** — cruz ámbar sobre el retrato que brilla con animación de pulso cuando los IP superan el umbral configurable (default 20)
