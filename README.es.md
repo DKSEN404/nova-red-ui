@@ -59,11 +59,9 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
-### v1.1.5 — Fix: tabs inertes + glow cyberpunk *(2026-05-31)*
-- **Fix: Cambio de pestañas** — los tabs de la ventana de mejora ahora cambian correctamente. Usa `FormApplication` global (legacy) con `this._tabs.forEach(t => t.bind(html[0]))` explícito, siguiendo el patrón del sistema en `CPRActorSheet:318`
-- **Fix: Glow cyberpunk** — todo el texto del diálogo tiene `text-shadow` glow con variables `--nv-glow-*` para legibilidad tipo pantalla
-
-### v1.1.4 — *(saltado — release roto)*
+### v1.1.4 — Fix: tabs + glow cyberpunk *(2026-05-31)*
+- **Fix (definitivo):** Tabs ahora cambian correctamente con jQuery manual — sin depender de `defaultOptions.tabs` ni `this._tabs` de FVTT (eliminados/refactorizados en v12)
+- **Fix:** Glow cyberpunk (`text-shadow` con `--nv-glow-*`) en todas las pestañas del diálogo
 
 ### v1.1.3 — Indicador de PP + Ventana de Mejora de Personaje *(2026-05-31)*
 - **Botón de notificación de PP** — cruz ámbar sobre el retrato que brilla con animación de pulso cuando los IP superan el umbral configurable (default 20)

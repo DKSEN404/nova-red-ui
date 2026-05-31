@@ -35,7 +35,6 @@ Hooks.once("ready", () => {
         height: 680,
         resizable: true,
         classes: ["pp-upgrade-dialog-window"],
-        tabs: [{ navSelector: ".pp-tabs", contentSelector: ".pp-tab-content", initial: "stats" }],
         submitOnChange: false,
         closeOnSubmit: false,
       });
@@ -120,8 +119,16 @@ Hooks.once("ready", () => {
     }
 
     activateListeners(html) {
-      this._tabs.forEach((t) => t.bind(html[0]));
       super.activateListeners(html);
+
+      html.find(".pp-tab").click((event) => {
+        event.preventDefault();
+        const tab = $(event.currentTarget).data("tab");
+        html.find(".pp-tab").removeClass("active");
+        html.find(".pp-tab-pane").removeClass("active");
+        html.find(`.pp-tab[data-tab="${tab}"]`).addClass("active");
+        html.find(`.pp-tab-pane[data-tab="${tab}"]`).addClass("active");
+      });
 
       html.find(".pp-skill-inc").click((event) => {
         event.preventDefault();
