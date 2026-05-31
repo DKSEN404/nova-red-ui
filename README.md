@@ -59,6 +59,17 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.3 — PP Upgrade Indicator + Character Improvement Dialog *(2026-05-31)*
+- **PP notification button** — amber cross icon over the portrait that glows with a pulse animation when IP exceeds the configurable threshold (default 20)
+- **Character Improvement dialog** — new window with 3 tabs accessible by clicking the PP button
+- **Stats tab** — reference guide on which character stats can/cannot be improved (imported from Stats Rule.html)
+- **Skills tab** — full interactive list of the actor's skills with +/− buttons to plan PP spending; each row shows skill name, difficulty (x2), current level, and PP cost for the upgrade
+- **Role Ability section** — role abilities of active roles with +/− buttons for rank upgrades
+- **Real-time remaining PP counter** — floating counter at the top of the skills tab updates as you add/remove upgrades
+- **Save/Cancel** — changes are previewed in the dialog and only applied on save; failed saves show an error notification
+- **IP Ledger integration** — each save automatically creates a ledger entry via `deltaLedgerProperty`
+- **Configurable notification threshold** — the guide tab has an input to set the PP threshold per character (stored in actor flags)
+
 ### v1.1.2 — Combat tab styling + Gear tab action buttons fix *(2026-05-30)*
 - **Fight tab grid layout** — `.fight-tab` now uses CSS Grid with `grid-template-areas: "injuries armor weapon"` for proper Meatspace layout
 - **Weapon grid** — complete CSS Grid layout with `weapon-image`, `weapon-name`, `weapon-ammo`, `weapon-info`, `weapon-mode`, `weapon-actions`, `weapon-attack`, `weapon-damage` grid areas

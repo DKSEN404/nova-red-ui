@@ -3523,3 +3523,432 @@ a[data-action="delete"] {
 .items-list .sub-list .item-detail {
   color: var(--nv-text-dimmed) !important;
 }
+
+/* ==========================================================
+   78. PP NOTIFICATION BUTTON (sobre retrato)
+   ========================================================== */
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn {
+  position: absolute !important;
+  top: 0.188rem !important;
+  right: 0.188rem !important;
+  z-index: 3 !important;
+  cursor: pointer !important;
+  opacity: 0.3 !important;
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  line-height: 1 !important;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn:hover {
+  opacity: 0.6 !important;
+}
+
+.character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn.pp-has-points {
+  opacity: 1 !important;
+  text-shadow:
+    0 0 6px var(--nv-glow-040),
+    0 0 12px var(--nv-glow-030),
+    0 0 20px var(--nv-glow-020) !important;
+  animation: pp-pulse 2s ease-in-out infinite !important;
+}
+
+@keyframes pp-pulse {
+  0%, 100% { text-shadow: 0 0 4px var(--nv-glow-050), 0 0 8px var(--nv-glow-030); }
+  50%      { text-shadow: 0 0 8px var(--nv-glow-070), 0 0 16px var(--nv-glow-050), 0 0 24px var(--nv-glow-030); }
+}
+
+/* ==========================================================
+   79. PP UPGRADE DIALOG — WINDOW & TABS
+   ========================================================== */
+
+.pp-upgrade-dialog-window {
+  border: 1px solid var(--nv-border) !important;
+  box-shadow: 0 0 20px var(--nv-glow-020) !important;
+}
+
+.pp-upgrade-dialog-window .window-content {
+  background: rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(6px) !important;
+  color: var(--nv-text-dimmed) !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  font-size: 0.8rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-tabs {
+  display: flex !important;
+  gap: 0 !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  background: var(--nv-glass-deep) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab {
+  flex: 1 !important;
+  padding: 0.5rem 0.25rem !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  color: var(--nv-text-dimmed) !important;
+  background: var(--nv-glass-deep) !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.75rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab:hover {
+  color: var(--nv-accent-dim) !important;
+  background: var(--nv-glass-mid) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab.active {
+  color: var(--nv-accent) !important;
+  background: var(--nv-glass-mid) !important;
+  border-bottom-color: var(--nv-accent) !important;
+  text-shadow: 0 0 6px var(--nv-glow-040) !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab i {
+  margin-right: 0.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-content {
+  padding: 0.5rem !important;
+  height: calc(100% - 2.5rem) !important;
+  overflow-y: auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-pane {
+  display: none !important;
+  height: 100% !important;
+}
+
+.pp-upgrade-dialog-window .pp-tab-pane.active {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ==========================================================
+   80. PP UPGRADE DIALOG — SKILLS TAB
+   ========================================================== */
+
+.pp-upgrade-dialog-window .pp-skills-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 2 !important;
+  background: var(--nv-glass-dark) !important;
+  padding: 0.5rem !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  text-align: right !important;
+  margin: -0.5rem -0.5rem 0.5rem -0.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-remaining-label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-remaining-value {
+  color: var(--nv-accent) !important;
+  font-size: 1.1rem !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 6px var(--nv-glow-040) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skills-list,
+.pp-upgrade-dialog-window .pp-role-list {
+  flex: 1 !important;
+  overflow-y: auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-row,
+.pp-upgrade-dialog-window .pp-role-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  padding: 0.2rem 0.5rem !important;
+  border-bottom: 1px solid var(--nv-glass-light) !important;
+  transition: background 0.15s ease !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-row:hover,
+.pp-upgrade-dialog-window .pp-role-row:hover {
+  background: var(--nv-glass-mid) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-name,
+.pp-upgrade-dialog-window .pp-role-name {
+  flex: 1 !important;
+  color: var(--nv-text-hint) !important;
+  font-size: 0.75rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-diff {
+  color: var(--nv-color-danger) !important;
+  font-size: 0.65rem !important;
+  margin-right: 0.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-source {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.65rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  padding: 0 !important;
+  border: 1px solid var(--nv-border) !important;
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-accent) !important;
+  cursor: pointer !important;
+  font-size: 0.8rem !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  border-radius: 2px !important;
+  transition: all 0.15s ease !important;
+  flex: 0 0 1.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:hover {
+  background: var(--nv-bg-dark) !important;
+  border-color: var(--nv-accent-dim) !important;
+  text-shadow: 0 0 4px var(--nv-glow-040) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-level,
+.pp-upgrade-dialog-window .pp-role-rank {
+  width: 1.5rem !important;
+  text-align: center !important;
+  color: var(--nv-accent) !important;
+  font-weight: bold !important;
+  font-size: 0.8rem !important;
+  flex: 0 0 1.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-cost,
+.pp-upgrade-dialog-window .pp-role-cost {
+  width: 4rem !important;
+  text-align: right !important;
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.7rem !important;
+  flex: 0 0 4rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-divider {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.4rem 0.5rem !important;
+  margin-top: 0.5rem !important;
+  border-top: 1px solid var(--nv-accent-dim) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  background: var(--nv-glass-deep) !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-divider span {
+  color: var(--nv-accent) !important;
+  font-size: 0.7rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+.pp-upgrade-dialog-window .pp-skills-footer {
+  position: sticky !important;
+  bottom: 0 !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+  padding: 0.5rem !important;
+  margin: 0.5rem -0.5rem -0.5rem -0.5rem !important;
+  background: var(--nv-glass-dark) !important;
+  border-top: 1px solid var(--nv-border) !important;
+}
+
+.pp-upgrade-dialog-window .pp-footer-cost {
+  flex: 1 !important;
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-total-cost {
+  color: var(--nv-accent) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn {
+  padding: 0.4rem 0.8rem !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 2px !important;
+  cursor: pointer !important;
+  font-size: 0.75rem !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  transition: all 0.15s ease !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-color-success) !important;
+  border-color: var(--nv-color-success) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:hover:not(:disabled) {
+  background: var(--nv-glass-mid) !important;
+  text-shadow: 0 0 6px var(--nv-glow-success) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-cancel {
+  background: var(--nv-bg-input) !important;
+  color: var(--nv-text-dimmed) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-cancel:hover {
+  background: var(--nv-glass-mid) !important;
+  color: var(--nv-accent) !important;
+}
+
+/* ==========================================================
+   81. PP UPGRADE DIALOG — STATS & GUIDE TABS
+   ========================================================== */
+
+.pp-upgrade-dialog-window .pp-stats-content,
+.pp-upgrade-dialog-window .pp-guide-content {
+  padding: 0.25rem !important;
+  color: var(--nv-text-dimmed) !important;
+  line-height: 1.6 !important;
+  font-size: 0.75rem !important;
+  overflow-y: auto !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h1,
+.pp-upgrade-dialog-window .pp-guide-content h1 {
+  color: var(--nv-accent) !important;
+  font-size: 1rem !important;
+  text-shadow: 0 0 6px var(--nv-glow-030) !important;
+  border-bottom: 1px solid var(--nv-border) !important;
+  padding-bottom: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h2,
+.pp-upgrade-dialog-window .pp-guide-content h2 {
+  color: var(--nv-accent-dim) !important;
+  font-size: 0.85rem !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content h3,
+.pp-upgrade-dialog-window .pp-guide-content h3 {
+  color: var(--nv-text-hint) !important;
+  font-size: 0.8rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content p,
+.pp-upgrade-dialog-window .pp-guide-content p {
+  margin-bottom: 0.4rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content table,
+.pp-upgrade-dialog-window .pp-guide-content table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 0.5rem 0 !important;
+  font-size: 0.7rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content th,
+.pp-upgrade-dialog-window .pp-guide-content th {
+  background: var(--nv-glass-dark) !important;
+  color: var(--nv-accent) !important;
+  padding: 0.2rem 0.4rem !important;
+  border: 1px solid var(--nv-border) !important;
+  text-align: center !important;
+  font-size: 0.7rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content td,
+.pp-upgrade-dialog-window .pp-guide-content td {
+  padding: 0.15rem 0.4rem !important;
+  border: 1px solid var(--nv-border) !important;
+  text-align: center !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-no {
+  color: var(--nv-color-danger) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-yes {
+  color: var(--nv-color-success) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content .pp-maybe {
+  color: var(--nv-accent-dim) !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content hr,
+.pp-upgrade-dialog-window .pp-guide-content hr {
+  border: none !important;
+  border-top: 1px solid var(--nv-border) !important;
+  margin: 0.75rem 0 !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content em,
+.pp-upgrade-dialog-window .pp-guide-content em {
+  color: var(--nv-accent-dim) !important;
+  font-style: italic !important;
+}
+
+.pp-upgrade-dialog-window .pp-stats-content strong,
+.pp-upgrade-dialog-window .pp-guide-content strong {
+  color: var(--nv-accent) !important;
+}
+
+.pp-upgrade-dialog-window .pp-guide-content ul {
+  margin: 0.25rem 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-guide-content li {
+  margin-bottom: 0.3rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-setting {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-top: 0.75rem !important;
+  padding: 0.5rem !important;
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 3px !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-setting label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.75rem !important;
+}
+
+.pp-upgrade-dialog-window .pp-threshold-input {
+  width: 4rem !important;
+  text-align: center !important;
+  background: var(--nv-bg-input) !important;
+  border: 1px solid var(--nv-border) !important;
+  color: var(--nv-accent) !important;
+  font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
+  padding: 0.2rem !important;
+  border-radius: 2px !important;
+}

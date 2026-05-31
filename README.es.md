@@ -59,6 +59,17 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.3 — Indicador de PP + Ventana de Mejora de Personaje *(2026-05-31)*
+- **Botón de notificación de PP** — cruz ámbar sobre el retrato que brilla con animación de pulso cuando los IP superan el umbral configurable (default 20)
+- **Ventana de Mejora de Personaje** — nuevo diálogo con 3 pestañas accesible al hacer clic en el botón PP
+- **Pestaña Estadísticas** — guía de referencia sobre qué estadísticas del personaje se pueden o no mejorar (importada de Stats Rule.html)
+- **Pestaña Habilidades** — lista interactiva completa de las habilidades del actor con botones +/− para planificar gasto de PP; cada fila muestra nombre, dificultad (x2), nivel actual y coste PP de la mejora
+- **Sección de Aptitud de rol** — aptitudes de rol de los roles activos con botones +/− para subir de rango
+- **Contador de PP restante en tiempo real** — contador flotante en la parte superior de la pestaña habilidades que se actualiza al añadir/eliminar mejoras
+- **Guardar/Cancelar** — los cambios se previsualizan en el diálogo y solo se aplican al guardar; los fallos muestran notificación de error
+- **Integración con Ledger de PP** — cada guardado crea automáticamente un registro en el ledger via `deltaLedgerProperty`
+- **Umbral de notificación configurable** — la pestaña Guía tiene un campo para ajustar el umbral de PP por personaje (almacenado en flags del actor)
+
 ### v1.1.2 — Estilizado de pestaña Combate + Fix botones de acción en Gear tab *(2026-05-30)*
 - **Grid layout del Fight tab** — `.fight-tab` ahora usa CSS Grid con `grid-template-areas: "injuries armor weapon"` para layout correcto de Meatspace
 - **Grilla de armas** — CSS Grid completo con áreas `weapon-image`, `weapon-name`, `weapon-ammo`, `weapon-info`, `weapon-mode`, `weapon-actions`, `weapon-attack`, `weapon-damage`
