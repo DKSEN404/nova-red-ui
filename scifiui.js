@@ -18,8 +18,7 @@ Hooks.on("init", function () {
 });
 
 Hooks.once("ready", () => {
-  const FVTTFormApp = foundry.applications?.sheets?.FormApplication || FormApplication;
-  class PPUpgradeDialog extends FVTTFormApp {
+  class PPUpgradeDialog extends FormApplication {
     constructor(actor, options = {}) {
       super(options);
       this.actor = actor;
@@ -121,7 +120,6 @@ Hooks.once("ready", () => {
     }
 
     activateListeners(html) {
-      this._tabs.forEach((t) => t.bind(html[0]));
       super.activateListeners(html);
 
       html.find(".pp-skill-inc").click((event) => {
