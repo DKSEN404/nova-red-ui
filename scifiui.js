@@ -121,6 +121,7 @@ Hooks.once("ready", () => {
     }
 
     activateListeners(html) {
+      this._tabs.forEach((t) => t.bind(html[0]));
       super.activateListeners(html);
 
       html.find(".pp-skill-inc").click((event) => {

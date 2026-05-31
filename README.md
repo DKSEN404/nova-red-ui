@@ -59,6 +59,10 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.4 — Fix: dialog tabs + stats readability *(2026-05-31)*
+- **Fix: Tab switching** — improvement dialog tabs now correctly switch content on click (were inert in v1.1.3 due to missing `Tabs.bind()` call for Foundry v12 legacy)
+- **Fix: Stats guide readability** — added glass background (`--nv-glass-mid`) and lighter text (`--nv-text`, `--nv-accent-bright` headings) for better legibility
+
 ### v1.1.3 — PP Upgrade Indicator + Character Improvement Dialog *(2026-05-31)*
 - **PP notification button** — amber cross icon over the portrait that glows with a pulse animation when IP exceeds the configurable threshold (default 20)
 - **Character Improvement dialog** — new window with 3 tabs accessible by clicking the PP button

@@ -3822,7 +3822,17 @@ a[data-action="delete"] {
    81. PP UPGRADE DIALOG — STATS & GUIDE TABS
    ========================================================== */
 
-.pp-upgrade-dialog-window .pp-stats-content,
+.pp-upgrade-dialog-window .pp-stats-content {
+  padding: 0.5rem !important;
+  color: var(--nv-text) !important;
+  line-height: 1.6 !important;
+  font-size: 0.75rem !important;
+  overflow-y: auto !important;
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 3px !important;
+}
+
 .pp-upgrade-dialog-window .pp-guide-content {
   padding: 0.25rem !important;
   color: var(--nv-text-dimmed) !important;
@@ -3833,7 +3843,7 @@ a[data-action="delete"] {
 
 .pp-upgrade-dialog-window .pp-stats-content h1,
 .pp-upgrade-dialog-window .pp-guide-content h1 {
-  color: var(--nv-accent) !important;
+  color: var(--nv-accent-bright) !important;
   font-size: 1rem !important;
   text-shadow: 0 0 6px var(--nv-glow-030) !important;
   border-bottom: 1px solid var(--nv-border) !important;
@@ -3843,7 +3853,7 @@ a[data-action="delete"] {
 
 .pp-upgrade-dialog-window .pp-stats-content h2,
 .pp-upgrade-dialog-window .pp-guide-content h2 {
-  color: var(--nv-accent-dim) !important;
+  color: var(--nv-accent) !important;
   font-size: 0.85rem !important;
   margin-top: 0.75rem !important;
   margin-bottom: 0.25rem !important;
