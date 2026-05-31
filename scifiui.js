@@ -32,7 +32,7 @@ Hooks.once("ready", () => {
         title: "Mejora de Personaje",
         template: "modules/nova-red-ui/templates/actor/character/pp-upgrade-dialog.hbs",
         width: 580,
-        height: 680,
+        height: 720,
         resizable: true,
         classes: ["pp-upgrade-dialog-window"],
         submitOnChange: false,
@@ -83,6 +83,7 @@ Hooks.once("ready", () => {
     }
 
     _refresh() {
+      console.log("PP | _refresh", { changes: this.changes, roleChanges: this.roleChanges, pendingCost: this.totalPendingCost, originalIP: this.originalIP });
       const html = this.element;
       html.find(".pp-skill-row").each((i, row) => {
         const $row = $(row);
@@ -110,11 +111,22 @@ Hooks.once("ready", () => {
       html.find(".pp-remaining-value").text(remaining);
       html.find(".pp-total-cost").text(this.totalPendingCost + " PP");
       const hasChanges = Object.keys(this.changes).length > 0 || Object.keys(this.roleChanges).length > 0;
-      html.find(".pp-btn-save").prop("disabled", !hasChanges || this.totalPendingCost > this.originalIP);
+      const shouldDisable = !hasChanges || this.totalPendingCost > this.originalIP;
+      console.log("PP | save state", { hasChanges, totalPendingCost: this.totalPendingCost, originalIP: this.originalIP, shouldDisable });
+      html.find(".pp-btn-save").prop("disabled", shouldDisable);
       if (this.totalPendingCost > this.originalIP) {
         html.find(".pp-remaining-value").css("color", "var(--nv-color-danger)");
       } else {
         html.find(".pp-remaining-value").css("color", "");
+      }
+      const pct = this.originalIP > 0 ? Math.min(100, (this.totalPendingCost / this.originalIP) * 100) : 0;
+      html.find(".pp-pp-bar-fill").css("width", pct + "%");
+      if (pct > 100) {
+        html.find(".pp-pp-bar-fill").css("background", "var(--nv-color-danger)");
+      } else if (pct > 75) {
+        html.find(".pp-pp-bar-fill").css("background", "var(--nv-accent-dim)");
+      } else {
+        html.find(".pp-pp-bar-fill").css("background", "");
       }
     }
 
@@ -135,8 +147,12 @@ Hooks.once("ready", () => {
         const row = $(event.currentTarget).closest(".pp-skill-row");
         const id = row.data("skill-id");
         const currentLevel = parseInt(row.data("current-level"));
+        console.log("PP | skill-inc clicked", { id, currentLevel, prevDelta: this.changes[id] });
         const delta = (this.changes[id] || 0) + 1;
-        if (currentLevel + delta > 10) return;
+        if (currentLevel + delta > 10) {
+          console.log("PP | skill-inc blocked — would exceed level 10", { currentLevel, delta });
+          return;
+        }
         this.changes[id] = delta;
         this._refresh();
       });
@@ -147,7 +163,11 @@ Hooks.once("ready", () => {
         const id = row.data("skill-id");
         const currentLevel = parseInt(row.data("current-level"));
         const curDelta = this.changes[id] || 0;
-        if (curDelta <= 0 && currentLevel === 0) return;
+        console.log("PP | skill-dec clicked", { id, currentLevel, curDelta });
+        if (curDelta <= 0 && currentLevel === 0) {
+          console.log("PP | skill-dec blocked — already at minimum");
+          return;
+        }
         const delta = curDelta - 1;
         if (delta <= 0) {
           delete this.changes[id];
@@ -162,8 +182,12 @@ Hooks.once("ready", () => {
         const row = $(event.currentTarget).closest(".pp-role-row");
         const id = row.data("role-id");
         const currentRank = parseInt(row.data("current-rank"));
+        console.log("PP | role-inc clicked", { id, currentRank, prevDelta: this.roleChanges[id] });
         const delta = (this.roleChanges[id] || 0) + 1;
-        if (currentRank + delta > 10) return;
+        if (currentRank + delta > 10) {
+          console.log("PP | role-inc blocked — would exceed rank 10", { currentRank, delta });
+          return;
+        }
         this.roleChanges[id] = delta;
         this._refresh();
       });
@@ -174,7 +198,11 @@ Hooks.once("ready", () => {
         const id = row.data("role-id");
         const currentRank = parseInt(row.data("current-rank"));
         const curDelta = this.roleChanges[id] || 0;
-        if (curDelta <= 0 && currentRank === 0) return;
+        console.log("PP | role-dec clicked", { id, currentRank, curDelta });
+        if (curDelta <= 0 && currentRank === 0) {
+          console.log("PP | role-dec blocked — already at minimum");
+          return;
+        }
         const delta = curDelta - 1;
         if (delta <= 0) {
           delete this.roleChanges[id];

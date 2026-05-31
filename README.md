@@ -59,6 +59,15 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.5 — i18n skills, category grouping, save button glow, PP bar *(2026-05-31)*
+- **i18n fix:** Skill and role ability names now respect the game language (uses `cprGetLocalizedlNameKey` system helper instead of raw `{{this.name}}`)
+- **Category grouping:** Skills are now organized by category (Awareness, Body, Fighting, etc.) with colored headers
+- **Save button glow:** Save button now has a glowing green box-shadow when enabled; disabled state more visually distinct
+- **PP progress bar:** Visual bar showing percentage of available PP being used, changes color near limit
+- **Improved aesthetics:** Alternating row colors on skill list, scale animations on +/− buttons, larger hit targets
+- **Taller dialog:** Height increased from 680px to 720px to accommodate categories
+- **Console logging:** Runtime logs (`PP | *`) added for debugging button/cost behavior
+
 ### v1.1.4 — Fix: tabs + cyberpunk text glow *(2026-05-31)*
 - **Fix (definitivo):** Tabs now switch correctly using manual jQuery click handlers — no dependency on FVTT `defaultOptions.tabs` or `this._tabs` (removed/refactored in v12)
 - **Fix:** Cyberpunk text glow (`text-shadow` with `--nv-glow-*`) across all dialog tabs

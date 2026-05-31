@@ -145,19 +145,27 @@
       </div>
 
       <div class="pp-skills-list">
-      {{#each actor.itemTypes.skill}}
-        <div class="pp-skill-row" data-skill-id="{{this._id}}"
-             data-difficulty="{{this.system.difficulty}}"
-             data-current-level="{{this.system.level}}">
-          <span class="pp-skill-name">{{this.name}}</span>
-          {{#if (cprCompare this.system.difficulty "===" "difficult")}}
-            <span class="pp-skill-diff">(x2)</span>
+      {{#each (cprFindConfigObj "skillCategories") as |categoryVal categoryKey|}}
+        {{#each (cprSortCoreSkills (cprFilter ../actor.itemTypes.skill "system.category" categoryKey))}}
+          {{#if @first}}
+          <div class="pp-category-header" data-category="{{../categoryKey}}">
+            <span>{{localize (cprFindConfigValue "skillCategories" ../categoryKey)}}</span>
+          </div>
           {{/if}}
-          <button class="pp-skill-btn pp-skill-dec" data-action="dec" {{#if (cprCompare this.system.level "<=" 0)}}disabled{{/if}}>−</button>
-          <span class="pp-skill-level">{{this.system.level}}</span>
-          <button class="pp-skill-btn pp-skill-inc" data-action="inc" {{#if (cprCompare this.system.level ">=" 10)}}disabled{{/if}}>+</button>
-          <span class="pp-skill-cost">0 PP</span>
-        </div>
+          <div class="pp-skill-row" data-skill-id="{{this._id}}"
+               data-difficulty="{{this.system.difficulty}}"
+               data-current-level="{{this.system.level}}"
+               data-skill-category="{{../categoryKey}}">
+            <span class="pp-skill-name">{{localize (cprGetLocalizedlNameKey this)}}</span>
+            {{#if (cprCompare this.system.difficulty "===" "difficult")}}
+              <span class="pp-skill-diff">(x2)</span>
+            {{/if}}
+            <button class="pp-skill-btn pp-skill-dec" data-action="dec" {{#if (cprCompare this.system.level "<=" 0)}}disabled{{/if}}>−</button>
+            <span class="pp-skill-level">{{this.system.level}}</span>
+            <button class="pp-skill-btn pp-skill-inc" data-action="inc" {{#if (cprCompare this.system.level ">=" 10)}}disabled{{/if}}>+</button>
+            <span class="pp-skill-cost">0 PP</span>
+          </div>
+        {{/each}}
       {{/each}}
       </div>
 
@@ -169,7 +177,7 @@
       {{#each actor.itemTypes.role}}
         <div class="pp-role-row" data-role-id="{{this._id}}"
              data-current-rank="{{this.system.rank}}">
-          <span class="pp-role-name">{{this.system.mainRoleAbility}} <span class="pp-role-source">({{this.name}})</span></span>
+          <span class="pp-role-name">{{localize (cprGetLocalizedlNameKey this.system.mainRoleAbility "roleAbility")}} <span class="pp-role-source">({{localize (cprGetLocalizedlNameKey this)}})</span></span>
           <button class="pp-skill-btn pp-role-dec" data-action="dec" {{#if (cprCompare this.system.rank "<=" 0)}}disabled{{/if}}>−</button>
           <span class="pp-role-rank">{{this.system.rank}}</span>
           <button class="pp-skill-btn pp-role-inc" data-action="inc" {{#if (cprCompare this.system.rank ">=" 10)}}disabled{{/if}}>+</button>
@@ -178,6 +186,13 @@
       {{/each}}
       </div>
       {{/if}}
+
+      <div class="pp-pp-bar">
+        <div class="pp-pp-bar-track">
+          <div class="pp-pp-bar-fill" style="width: 0%"></div>
+        </div>
+        <span class="pp-pp-bar-label">PP</span>
+      </div>
 
       <div class="pp-skills-footer">
         <span class="pp-footer-cost">Coste total: <strong class="pp-total-cost">0 PP</strong></span>

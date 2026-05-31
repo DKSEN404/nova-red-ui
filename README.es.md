@@ -59,6 +59,15 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.5 — i18n habilidades, agrupación por categorías, glow botón Guardar, barra PP *(2026-05-31)*
+- **i18n fix:** Nombres de habilidades y aptitudes de rol ahora respetan el idioma del juego (usa el helper del sistema `cprGetLocalizedlNameKey` en lugar de `{{this.name}}`)
+- **Agrupación por categorías:** Habilidades organizadas por categoría (Awareness, Body, Fighting, etc.) con cabeceras de color
+- **Glow en botón Guardar:** El botón Guardar cambios tiene un box-shadow verde brillante cuando está habilitado; estado deshabilitado más visible
+- **Barra de progreso PP:** Barra visual que muestra el porcentaje de PP disponibles que se están usando; cambia de color al acercarse al límite
+- **Estética mejorada:** Colores alternados en filas de habilidades, animaciones de escala en botones +/−, blancos táctiles más grandes
+- **Diálogo más alto:** Altura aumentada de 680px a 720px para dar espacio a las categorías
+- **Logs de consola:** Registros de ejecución (`PP | *`) añadidos para depurar el comportamiento de botones y costes
+
 ### v1.1.4 — Fix: tabs + glow cyberpunk *(2026-05-31)*
 - **Fix (definitivo):** Tabs ahora cambian correctamente con jQuery manual — sin depender de `defaultOptions.tabs` ni `this._tabs` de FVTT (eliminados/refactorizados en v12)
 - **Fix:** Glow cyberpunk (`text-shadow` con `--nv-glow-*`) en todas las pestañas del diálogo

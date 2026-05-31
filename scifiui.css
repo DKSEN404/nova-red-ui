@@ -3677,6 +3677,14 @@ a[data-action="delete"] {
   background: var(--nv-glass-mid) !important;
 }
 
+.pp-upgrade-dialog-window .pp-skills-list .pp-skill-row:nth-child(even):not(:hover) {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+.pp-upgrade-dialog-window .pp-role-list .pp-role-row:nth-child(even):not(:hover) {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
 .pp-upgrade-dialog-window .pp-skill-name,
 .pp-upgrade-dialog-window .pp-role-name {
   flex: 1 !important;
@@ -3699,6 +3707,23 @@ a[data-action="delete"] {
   font-size: 0.65rem !important;
 }
 
+.pp-upgrade-dialog-window .pp-category-header {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.2rem 0.5rem !important;
+  margin-top: 0.25rem !important;
+  background: var(--nv-glass-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
+}
+.pp-upgrade-dialog-window .pp-category-header span {
+  color: var(--nv-accent-dim) !important;
+  font-size: 0.65rem !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: 0 0 4px var(--nv-glow-015) !important;
+}
+
 .pp-upgrade-dialog-window .pp-skill-btn {
   width: 1.5rem !important;
   height: 1.5rem !important;
@@ -3715,10 +3740,15 @@ a[data-action="delete"] {
   flex: 0 0 1.5rem !important;
 }
 
-.pp-upgrade-dialog-window .pp-skill-btn:hover {
+.pp-upgrade-dialog-window .pp-skill-btn:hover:not(:disabled) {
   background: var(--nv-bg-dark) !important;
   border-color: var(--nv-accent-dim) !important;
   text-shadow: 0 0 4px var(--nv-glow-040) !important;
+  transform: scale(1.15) !important;
+}
+
+.pp-upgrade-dialog-window .pp-skill-btn:active:not(:disabled) {
+  transform: scale(0.95) !important;
 }
 
 .pp-upgrade-dialog-window .pp-skill-btn:disabled {
@@ -3765,13 +3795,42 @@ a[data-action="delete"] {
   letter-spacing: 0.1em !important;
 }
 
+.pp-upgrade-dialog-window .pp-pp-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  padding: 0.25rem 0.5rem !important;
+  margin: 0.25rem 0 !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-track {
+  flex: 1 !important;
+  height: 0.4rem !important;
+  background: var(--nv-glass-deep) !important;
+  border: 1px solid var(--nv-border) !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: var(--nv-accent) !important;
+  transition: width 0.2s ease !important;
+  border-radius: 1px !important;
+}
+.pp-upgrade-dialog-window .pp-pp-bar-label {
+  color: var(--nv-text-dimmed) !important;
+  font-size: 0.65rem !important;
+  flex: 0 0 auto !important;
+}
+
 .pp-upgrade-dialog-window .pp-skills-footer {
   position: sticky !important;
   bottom: 0 !important;
+  z-index: 3 !important;
   display: flex !important;
   gap: 0.5rem !important;
   align-items: center !important;
-  padding: 0.5rem !important;
+  padding: 0.6rem 0.5rem !important;
   margin: 0.5rem -0.5rem -0.5rem -0.5rem !important;
   background: var(--nv-glass-dark) !important;
   border-top: 1px solid var(--nv-border) !important;
@@ -3790,9 +3849,9 @@ a[data-action="delete"] {
 }
 
 .pp-upgrade-dialog-window .pp-btn {
-  padding: 0.4rem 0.8rem !important;
+  padding: 0.5rem 1rem !important;
   border: 1px solid var(--nv-border) !important;
-  border-radius: 2px !important;
+  border-radius: 3px !important;
   cursor: pointer !important;
   font-size: 0.75rem !important;
   font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
@@ -3803,11 +3862,25 @@ a[data-action="delete"] {
   background: var(--nv-bg-input) !important;
   color: var(--nv-color-success) !important;
   border-color: var(--nv-color-success) !important;
+  font-weight: bold !important;
+  letter-spacing: 0.04em !important;
+}
+.pp-upgrade-dialog-window .pp-btn-save:not(:disabled) {
+  box-shadow: 0 0 8px var(--nv-glow-success) !important;
+  border-color: var(--nv-color-success) !important;
 }
 
 .pp-upgrade-dialog-window .pp-btn-save:hover:not(:disabled) {
   background: var(--nv-glass-mid) !important;
   text-shadow: 0 0 6px var(--nv-glow-success) !important;
+  box-shadow: 0 0 14px var(--nv-glow-success) !important;
+  transform: scale(1.05) !important;
+}
+
+.pp-upgrade-dialog-window .pp-btn-save:disabled {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+  filter: grayscale(0.5) !important;
 }
 
 .pp-upgrade-dialog-window .pp-btn-save:disabled {
