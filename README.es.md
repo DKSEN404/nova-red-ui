@@ -59,6 +59,10 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.6 — Fix: botones en Ventana de Mejora no responden *(2026-05-31)*
+- **Causa raíz corregida:** `this.actor.itemTypes.skill.get(id)` y `this.actor.itemTypes.role.get(id)` fallaban porque `itemTypes` almacena arrays, no objetos `Collection` de Foundry
+- **Fix:** Reemplazados todos los `.get(id)` con `.find(s => s.id === id)` en `scifiui.js` (6 ocurrencias en `totalPendingCost`, `_refresh` y el handler de guardado)
+
 ### v1.1.5 — i18n habilidades, agrupación por categorías, glow botón Guardar, barra PP *(2026-05-31)*
 - **i18n fix:** Nombres de habilidades y aptitudes de rol ahora respetan el idioma del juego (usa el helper del sistema `cprGetLocalizedlNameKey` en lugar de `{{this.name}}`)
 - **Agrupación por categorías:** Habilidades organizadas por categoría (Awareness, Body, Fighting, etc.) con cabeceras de color

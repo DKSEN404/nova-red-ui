@@ -68,13 +68,13 @@ Hooks.once("ready", () => {
     get totalPendingCost() {
       let total = 0;
       for (const [id, delta] of Object.entries(this.changes)) {
-        const skill = this.actor.itemTypes.skill.get(id);
+        const skill = this.actor.itemTypes.skill.find(s => s.id === id);
         if (skill) {
           total += this._calcSkillCost(skill.system.difficulty, skill.system.level, skill.system.level + delta);
         }
       }
       for (const [id, delta] of Object.entries(this.roleChanges)) {
-        const role = this.actor.itemTypes.role.get(id);
+        const role = this.actor.itemTypes.role.find(s => s.id === id);
         if (role) {
           total += this._calcRoleCost(role.system.rank, role.system.rank + delta);
         }
@@ -88,7 +88,7 @@ Hooks.once("ready", () => {
       html.find(".pp-skill-row").each((i, row) => {
         const $row = $(row);
         const id = $row.data("skill-id");
-        const skill = this.actor.itemTypes.skill.get(id);
+        const skill = this.actor.itemTypes.skill.find(s => s.id === id);
         if (!skill) return;
         const delta = this.changes[id] || 0;
         const newLevel = skill.system.level + delta;
@@ -99,7 +99,7 @@ Hooks.once("ready", () => {
       html.find(".pp-role-row").each((i, row) => {
         const $row = $(row);
         const id = $row.data("role-id");
-        const role = this.actor.itemTypes.role.get(id);
+        const role = this.actor.itemTypes.role.find(s => s.id === id);
         if (!role) return;
         const delta = this.roleChanges[id] || 0;
         const newRank = role.system.rank + delta;
@@ -226,13 +226,13 @@ Hooks.once("ready", () => {
         try {
           const updates = [];
           for (const [id, delta] of Object.entries(this.changes)) {
-            const skill = this.actor.itemTypes.skill.get(id);
+            const skill = this.actor.itemTypes.skill.find(s => s.id === id);
             if (skill) {
               updates.push({ _id: id, "system.level": skill.system.level + delta });
             }
           }
           for (const [id, delta] of Object.entries(this.roleChanges)) {
-            const role = this.actor.itemTypes.role.get(id);
+            const role = this.actor.itemTypes.role.find(s => s.id === id);
             if (role) {
               updates.push({ _id: id, "system.rank": role.system.rank + delta });
             }

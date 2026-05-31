@@ -59,6 +59,10 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.6 — Fix: buttons in PP Upgrade Dialog not responding *(2026-05-31)*
+- **Root cause fixed:** `this.actor.itemTypes.skill.get(id)` and `this.actor.itemTypes.role.get(id)` crash because `itemTypes` stores arrays, not Foundry `Collection` objects
+- **Fix:** Replaced all `.get(id)` with `.find(s => s.id === id)` in `scifiui.js` (6 occurrences in `totalPendingCost`, `_refresh`, and save handler)
+
 ### v1.1.5 — i18n skills, category grouping, save button glow, PP bar *(2026-05-31)*
 - **i18n fix:** Skill and role ability names now respect the game language (uses `cprGetLocalizedlNameKey` system helper instead of raw `{{this.name}}`)
 - **Category grouping:** Skills are now organized by category (Awareness, Body, Fighting, etc.) with colored headers
