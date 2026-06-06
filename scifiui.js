@@ -302,12 +302,13 @@ Hooks.once("ready", () => {
     getData() {
       const data = super.getData();
       data.ppHasPoints = false;
-      const ip = this.actor.system.improvementPoints?.value || 0;
-      const threshold = this.actor.getFlag("nova-red-ui", "ppThreshold") || 20;
+      const ip = Number(this.actor.system.improvementPoints?.value) || 0;
+      const threshold = Number(this.actor.getFlag("nova-red-ui", "ppThreshold")) || 20;
       data.ppThreshold = threshold;
       if (ip >= threshold) {
         data.ppHasPoints = true;
       }
+      console.log("PP DEBUG | IP:", ip, "Threshold:", threshold, "HasPoints:", ip >= threshold);
       return data;
     }
 

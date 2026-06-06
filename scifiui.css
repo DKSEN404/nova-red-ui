@@ -855,7 +855,7 @@ option, optgroup {
 .fight-tab {
   display: grid !important;
   grid-template-areas: "injuries armor weapon" !important;
-  grid-template-columns: 1fr 1fr 1fr !important;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr) minmax(300px, 1fr) !important;
   height: 100% !important;
   gap: 0.15rem !important;
   background-color: var(--nv-glass-dark) !important;
@@ -4187,4 +4187,13 @@ a[data-action="delete"] {
 .character-vertical-sheet .rolefight-tab-content .fire-checkbox,
 .fight-tab .fire-checkbox {
   font-size: 0.6rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .role-section,
+.character-vertical-sheet .rolefight-tab-content .interface-abilities-section,
+.character-vertical-sheet .rolefight-tab-content .cyberdeck-installed-section,
+.character-vertical-sheet .rolefight-tab-content .cyberdeck-rezzed-section {
+  background: var(--nv-glass-mid) !important;
+  border: 1px solid var(--nv-border) !important;
+  padding: 0.15rem !important;
 }

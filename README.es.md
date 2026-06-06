@@ -59,6 +59,12 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.2.0 — Combat Gallery expandido + fix threshold debug *(2026-06-06)*
+- **Columnas de combate más anchas:** `.fight-tab` cambiado de `1fr 1fr 1fr` a `minmax(300px, 1fr)` para que cada sección (heridas, armadura, armas) tenga al menos 300px — texto ya no se solapa
+- **Modo galería en secciones Meat/Net:** Fondo glass agregado a secciones de aptitudes de rol, abilities de interfaz, programas instalados y rezzados en la hoja vertical
+- **Fix revisión de threshold PP:** Coerción `Number()` en valores IP y threshold para evitar bugs de comparación por tipo string; console.log de debug agregado
+- **Fix tooltip:** "IP insuficiente" → "PP insuficiente" en tooltip español
+
 ### v1.1.10 — Gallery hoja original + fix threshold re-render *(2026-06-06)*
 - **Modo galería en hoja original:** Selectores paralelos `.fight-tab` agregados en Section 84 para que armas, armaduras y heridas se muestren en grilla de 2 columnas en la hoja horizontal original
 - **Fix threshold PP no actualizaba:** Al cambiar el threshold de PP en la pestaña Guía, la hoja se re-renderiza inmediatamente para que la cruz de notificación refleje el nuevo umbral

@@ -59,6 +59,12 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.2.0 — Combat Gallery expanded + PP threshold debug *(2026-06-06)*
+- **Wider fight columns:** Changed `.fight-tab` from `1fr 1fr 1fr` to `minmax(300px, 1fr)` so each section (injuries, armor, weapons) has at least 300px width — no more overlapping text
+- **Gallery mode for Meat/Net sections:** Added glass background styling for role abilities, interface abilities, installed programs, and rezzed programs sections in the vertical sheet
+- **Fix PP threshold re-check:** Added `Number()` coercion on IP and threshold values to prevent string-type comparison bugs; added console.log debug
+- **Tooltip text fix:** "IP insuficiente" → "PP insuficiente" in Spanish tooltip
+
 ### v1.1.10 — Gallery original sheet + fix PP threshold re-render *(2026-06-06)*
 - **Gallery mode for original sheet:** Added `.fight-tab` parallel selectors to Section 84 so weapons, armor, and injuries display in 2-column grid in the original horizontal actor sheet
 - **Fix PP threshold not updating:** When changing the PP threshold in the Guide tab, the actor sheet now re-renders immediately so the notification cross updates to reflect the new threshold
