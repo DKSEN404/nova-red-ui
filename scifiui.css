@@ -4124,19 +4124,23 @@ a[data-action="delete"] {
    ========================================================== */
 
 .character-vertical-sheet .rolefight-tab-content .weapons-list,
-.character-vertical-sheet .rolefight-tab-content .melee-weapons-list {
+.character-vertical-sheet .rolefight-tab-content .melee-weapons-list,
+.fight-tab .weapons-list,
+.fight-tab .melee-weapons-list {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 0.15rem !important;
 }
 
-.character-vertical-sheet .rolefight-tab-content .armor-list {
+.character-vertical-sheet .rolefight-tab-content .armor-list,
+.fight-tab .armor-list {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 0.15rem !important;
 }
 
-.character-vertical-sheet .rolefight-tab-content .injuries-content {
+.character-vertical-sheet .rolefight-tab-content .injuries-content,
+.fight-tab .injuries-content {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
   gap: 0.15rem !important;
@@ -4144,32 +4148,43 @@ a[data-action="delete"] {
 
 .character-vertical-sheet .rolefight-tab-content .weapon-grid,
 .character-vertical-sheet .rolefight-tab-content .armor-grid,
-.character-vertical-sheet .rolefight-tab-content .injuries-grid {
+.character-vertical-sheet .rolefight-tab-content .injuries-grid,
+.fight-tab .weapon-grid,
+.fight-tab .armor-grid,
+.fight-tab .injuries-grid {
   margin: 0 !important;
   min-height: 2.8rem !important;
 }
 
 .character-vertical-sheet .rolefight-tab-content .weapon-image,
 .character-vertical-sheet .rolefight-tab-content .armor-image,
-.character-vertical-sheet .rolefight-tab-content .injuries-image {
+.character-vertical-sheet .rolefight-tab-content .injuries-image,
+.fight-tab .weapon-image,
+.fight-tab .armor-image,
+.fight-tab .injuries-image {
   width: 2.5rem !important;
   height: 2.5rem !important;
 }
 
 .character-vertical-sheet .rolefight-tab-content .weapon-name a,
-.character-vertical-sheet .rolefight-tab-content .armor-name a {
+.character-vertical-sheet .rolefight-tab-content .armor-name a,
+.fight-tab .weapon-name a,
+.fight-tab .armor-name a {
   font-size: 0.7rem !important;
 }
 
-.character-vertical-sheet .rolefight-tab-content .weapon-info .text-pill {
+.character-vertical-sheet .rolefight-tab-content .weapon-info .text-pill,
+.fight-tab .weapon-info .text-pill {
   font-size: 0.55rem !important;
   padding: 0 0.2rem !important;
 }
 
-.character-vertical-sheet .rolefight-tab-content .weapon-ammo {
+.character-vertical-sheet .rolefight-tab-content .weapon-ammo,
+.fight-tab .weapon-ammo {
   font-size: 0.65rem !important;
 }
 
-.character-vertical-sheet .rolefight-tab-content .fire-checkbox {
+.character-vertical-sheet .rolefight-tab-content .fire-checkbox,
+.fight-tab .fire-checkbox {
   font-size: 0.6rem !important;
 }

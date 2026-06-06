@@ -59,6 +59,10 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.10 — Gallery hoja original + fix threshold re-render *(2026-06-06)*
+- **Modo galería en hoja original:** Selectores paralelos `.fight-tab` agregados en Section 84 para que armas, armaduras y heridas se muestren en grilla de 2 columnas en la hoja horizontal original
+- **Fix threshold PP no actualizaba:** Al cambiar el threshold de PP en la pestaña Guía, la hoja se re-renderiza inmediatamente para que la cruz de notificación refleje el nuevo umbral
+
 ### v1.1.9 — Combat Gallery + tooltips PP *(2026-06-06)*
 - **Modo Galería de combate (hoja vertical):** Armas, armaduras y heridas ahora se muestran en grilla de 2 columnas con tarjetas glass compactas para un look limpio y eficiente
 - **Fix grillas de combate colapsadas:** Alturas de fila cambiadas de `1.1rem` fijas a `auto` para evitar desborde de contenido; `overflow: hidden` + `object-fit: contain` en imágenes de items para evitar que iconos grandes rompan el layout

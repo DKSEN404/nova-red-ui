@@ -272,6 +272,9 @@ Hooks.once("ready", () => {
         const val = parseInt($(event.currentTarget).val());
         if (val > 0) {
           this.actor.setFlag("nova-red-ui", "ppThreshold", val);
+          if (this.actor.sheet && this.actor.sheet.rendered) {
+            this.actor.sheet.render();
+          }
         }
       });
     }

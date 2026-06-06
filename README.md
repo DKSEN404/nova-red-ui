@@ -59,6 +59,10 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.10 — Gallery original sheet + fix PP threshold re-render *(2026-06-06)*
+- **Gallery mode for original sheet:** Added `.fight-tab` parallel selectors to Section 84 so weapons, armor, and injuries display in 2-column grid in the original horizontal actor sheet
+- **Fix PP threshold not updating:** When changing the PP threshold in the Guide tab, the actor sheet now re-renders immediately so the notification cross updates to reflect the new threshold
+
 ### v1.1.9 — Combat Gallery + PP tooltips *(2026-06-06)*
 - **Combat Gallery mode (vertical sheet):** Weapons, armor, and injuries now display in a 2-column grid layout with compact glass cards for a clean, space-efficient look
 - **Fix collapsed combat grids:** Grid row heights changed from fixed `1.1rem` to `auto` to prevent content overflow; added `overflow: hidden` + `object-fit: contain` on item images to prevent oversized icons breaking layout
