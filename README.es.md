@@ -59,6 +59,12 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.9 — Combat Gallery + tooltips PP *(2026-06-06)*
+- **Modo Galería de combate (hoja vertical):** Armas, armaduras y heridas ahora se muestran en grilla de 2 columnas con tarjetas glass compactas para un look limpio y eficiente
+- **Fix grillas de combate colapsadas:** Alturas de fila cambiadas de `1.1rem` fijas a `auto` para evitar desborde de contenido; `overflow: hidden` + `object-fit: contain` en imágenes de items para evitar que iconos grandes rompan el layout
+- **Fix estilo de secciones en hoja vertical:** Selectores paralelos `.rolefight-tab-content` agregados para que headers y fondos de sección reciban el mismo estilo que el fight tab original
+- **Tooltip PP con sabor CP RED:** Tooltip dinámico — "Threshold superado, edgerunner — mejoras listas" (verde, IP ≥ threshold) / "IP insuficiente, gonk — seguí farmeando" (rojo, IP < threshold)
+
 ### v1.1.8 — Fixes: estructura, secciones, equipamiento, notificación PP *(2026-06-06)*
 - **Fix layout vertical:** Estructura base de respaldo (`display: grid` en `.sheet-vertical`) para evitar que la hoja aparezca sin estructura cuando el módulo carga parcialmente
 - **Fix icono equipamiento:** Armas, armaduras y objetos del gear tab ya no solapan sus nombres con los iconos — `overflow: hidden` + `text-overflow: ellipsis` en todos los grids de combate y equipo

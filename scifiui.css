@@ -850,7 +850,7 @@ option, optgroup {
 }
 
 /* ==========================================================
-    22. FIGHT TAB — MEATSPACE
+    22. FIGHT TAB — MEATSPACE (sistema original + hoja vertical)
    ========================================================== */
 .fight-tab {
   display: grid !important;
@@ -876,14 +876,26 @@ option, optgroup {
   min-height: 100% !important;
 }
 
-.fight-tab .section-name {
+.fight-tab .section-name,
+.rolefight-tab-content .section-name {
   background-color: var(--nv-glass-deep) !important;
   color: var(--nv-accent) !important;
   border-bottom: 1px solid var(--nv-accent) !important;
 }
 
-.fight-tab .fight-tab > div {
+.fight-tab .fight-tab > div,
+.rolefight-tab-content > div {
   background-color: var(--nv-glass-mid) !important;
+}
+
+.fight-tab .injuries-section .items-header,
+.fight-tab .armor-section .items-header,
+.fight-tab .weapon-section .items-header,
+.rolefight-tab-content .injuries-section .items-header,
+.rolefight-tab-content .armor-section .items-header,
+.rolefight-tab-content .weapon-section .items-header {
+  background-color: var(--nv-bg-dark) !important;
+  border-bottom: 1px solid var(--nv-accent-dim) !important;
 }
 
 /* ==========================================================
@@ -892,13 +904,14 @@ option, optgroup {
 .weapon-grid {
   display: grid !important;
   grid-template-columns: 2.5rem 1fr 4rem 1.1rem 1.8rem 1.8rem !important;
-  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-rows: auto auto auto !important;
   grid-template-areas:
     "weapon-image weapon-name weapon-mode weapon-actions weapon-attack weapon-damage"
     "weapon-image weapon-ammo weapon-mode weapon-actions weapon-attack weapon-damage"
     "weapon-image weapon-info weapon-mode weapon-actions weapon-attack weapon-damage" !important;
-  height: 3.5rem !important;
-  padding-top: 0.15rem !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
   border: 1px solid var(--nv-bg-dark) !important;
   margin: 0.15rem !important;
   background: var(--nv-glass-mid) !important;
@@ -906,6 +919,15 @@ option, optgroup {
 
 .weapon-image {
   grid-area: weapon-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.weapon-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
 }
 
 .weapon-name {
@@ -984,13 +1006,14 @@ option, optgroup {
 .armor-grid {
   display: grid !important;
   grid-template-columns: 2.5rem 1fr auto 1.9rem 2.2rem !important;
-  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-rows: auto auto auto !important;
   grid-template-areas:
     "armor-image armor-name armor-name armor-name armor-name"
     "armor-image armor-1-location armor-1-stats armor-1-type armor-1-actions"
     "armor-image armor-2-location armor-2-stats armor-2-type armor-2-actions" !important;
-  height: 3.5rem !important;
-  padding-top: 0.15rem !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
   border: 1px solid var(--nv-bg-dark) !important;
   margin: 0.15rem !important;
   background: var(--nv-glass-mid) !important;
@@ -998,6 +1021,15 @@ option, optgroup {
 
 .armor-image {
   grid-area: armor-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.armor-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
 }
 
 .armor-name {
@@ -1074,12 +1106,14 @@ option, optgroup {
 .injuries-grid {
   display: grid !important;
   grid-template-columns: 2.5rem 1fr 1.2rem !important;
-  grid-template-rows: 1.1rem 1.1rem 1.1rem !important;
+  grid-template-rows: auto auto auto !important;
   grid-template-areas:
     "injuries-image injuries-name injuries-name"
     "injuries-image injuries-desc injuries-actions"
     "injuries-image injuries-effects injuries-effects" !important;
-  height: 3.5rem !important;
+  height: auto !important;
+  min-height: 3.2rem !important;
+  padding: 0.15rem 0 !important;
   border: 1px solid var(--nv-bg-dark) !important;
   margin: 0.15rem !important;
   background: var(--nv-glass-mid) !important;
@@ -1087,6 +1121,15 @@ option, optgroup {
 
 .injuries-image {
   grid-area: injuries-image !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.injuries-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
 }
 
 .injuries-effects {
@@ -4074,4 +4117,59 @@ a[data-action="delete"] {
   font-family: var(--cpr-font-primary, "Tektur", monospace) !important;
   padding: 0.2rem !important;
   border-radius: 2px !important;
+}
+
+/* ==========================================================
+    84. COMBAT GALLERY — HOJA VERTICAL (2 columnas, tarjetas)
+   ========================================================== */
+
+.character-vertical-sheet .rolefight-tab-content .weapons-list,
+.character-vertical-sheet .rolefight-tab-content .melee-weapons-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .armor-list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .injuries-content {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.15rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-grid,
+.character-vertical-sheet .rolefight-tab-content .armor-grid,
+.character-vertical-sheet .rolefight-tab-content .injuries-grid {
+  margin: 0 !important;
+  min-height: 2.8rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-image,
+.character-vertical-sheet .rolefight-tab-content .armor-image,
+.character-vertical-sheet .rolefight-tab-content .injuries-image {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-name a,
+.character-vertical-sheet .rolefight-tab-content .armor-name a {
+  font-size: 0.7rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-info .text-pill {
+  font-size: 0.55rem !important;
+  padding: 0 0.2rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .weapon-ammo {
+  font-size: 0.65rem !important;
+}
+
+.character-vertical-sheet .rolefight-tab-content .fire-checkbox {
+  font-size: 0.6rem !important;
 }
