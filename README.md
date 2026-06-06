@@ -59,6 +59,15 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.1.8 — Fixes: estructura, secciones, equipamiento, notificación PP *(2026-06-06)*
+- **Fix layout vertical:** Estructura base de respaldo (`display: grid` en `.sheet-vertical`) para evitar que la hoja aparezca sin estructura cuando el módulo carga parcialmente
+- **Fix icono equipamiento:** Armas, armaduras y objetos del gear tab ya no solapan sus nombres con los iconos — `overflow: hidden` + `text-overflow: ellipsis` en todos los grids de combate y equipo
+- **Fix numeración secciones CSS:** Secciones duplicadas 68 y 76 renumeradas; sección 75 fuera de orden corregida — ahora secuencia 75→83 limpia
+- **Rediseño notificación PP:** Glow ámbar permanente; color de la cruz cambia a rojo (`--nv-color-danger`) sin puntos y verde (`--nv-color-success`) con puntos — sin animación de pulso
+- **Ancho hoja personaje:** Aumentado de 625px a 830px para mejor visualización en pantallas anchas
+- **Console logs eliminados:** Todos los `console.log` de diagnóstico del PP Upgrade Dialog eliminados (código más limpio)
+- **Directorios vacíos eliminados:** Carpetas de templates sin contenido removidas para evitar confusión en la estructura del proyecto
+
 ### v1.1.7 — Fix: botón resta, ledger detallado, notificación PP verde *(2026-05-31)*
 - **Fix botón resta:** El botón − ahora se habilita al subir una habilidad desde nivel 0 (se actualiza dinámicamente en `_refresh()` según `delta > 0`)
 - **Fix ledger detallado:** El registro de gastos ahora incluye nombres localizados de habilidades/aptitudes y niveles (`Athletics N3→N5`) en lugar de solo el conteo

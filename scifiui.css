@@ -910,6 +910,10 @@ option, optgroup {
 
 .weapon-name {
   grid-area: weapon-name !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
 }
 
 .weapon-ammo {
@@ -939,6 +943,10 @@ option, optgroup {
 
 .weapon-name a {
   color: var(--nv-accent) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
 }
 
 .weapon-info .text-pill {
@@ -994,6 +1002,10 @@ option, optgroup {
 
 .armor-name {
   grid-area: armor-name !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0 !important;
 }
 
 .armor-1-location {
@@ -1030,6 +1042,10 @@ option, optgroup {
 
 .armor-name a {
   color: var(--nv-accent) !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: block !important;
 }
 
 .armor-1-location,
@@ -2691,7 +2707,7 @@ code {
 }
 
 /* ==========================================================
-    68. PLAYER LIST / USER MANAGEMENT
+    75. PLAYER LIST / USER MANAGEMENT
     ========================================================== */
 
 /* --- Player List (sidebar) --- */
@@ -2951,8 +2967,15 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
-    75. VERTICAL CHARACTER SHEET — 625×690
+    78. VERTICAL CHARACTER SHEET — 830×690
     ========================================================== */
+
+/* --- Base structural fallback (no depende de .character-vertical-sheet) --- */
+.sheet-vertical {
+  display: grid !important;
+  grid-template-columns: 2.5rem 1fr !important;
+  background: transparent !important;
+}
 
 /* --- Window-app wrapper --- */
 .character-vertical-sheet .window-content {
@@ -3483,8 +3506,8 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
-    76. GEAR TAB — INSTALLED UPGRADES / SUB-LIST FIXES
-   ========================================================== */
+    79. GEAR TAB — INSTALLED UPGRADES / SUB-LIST FIXES
+    ========================================================== */
 
 /* Sub-list items: restore transparent background (system overrides) */
 .items-list .sub-list li.item,
@@ -3531,7 +3554,7 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
-   78. PP NOTIFICATION BUTTON (sobre retrato)
+   80. PP NOTIFICATION BUTTON (sobre retrato)
    ========================================================== */
 
 .character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn {
@@ -3540,33 +3563,30 @@ a[data-action="delete"] {
   right: 0.188rem !important;
   z-index: 3 !important;
   cursor: pointer !important;
-  opacity: 0.3 !important;
-  color: var(--nv-accent) !important;
   font-size: 0.7rem !important;
   line-height: 1 !important;
-  transition: opacity 0.3s ease, text-shadow 0.3s ease !important;
+  transition: color 0.3s ease, text-shadow 0.3s ease !important;
+  /* Glow ámbar siempre visible */
+  text-shadow:
+    0 0 4px var(--nv-glow-040),
+    0 0 8px var(--nv-glow-020) !important;
+  /* Rojo por defecto (sin puntos suficientes) */
+  color: var(--nv-color-danger) !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn:hover {
-  opacity: 0.6 !important;
+  text-shadow:
+    0 0 6px var(--nv-glow-050),
+    0 0 12px var(--nv-glow-030) !important;
 }
 
 .character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn.pp-has-points {
-  opacity: 1 !important;
-  text-shadow:
-    0 0 6px var(--nv-glow-success-040),
-    0 0 12px var(--nv-glow-success-030),
-    0 0 20px var(--nv-glow-success-020) !important;
-  animation: pp-pulse 2s ease-in-out infinite !important;
-}
-
-@keyframes pp-pulse {
-  0%, 100% { text-shadow: 0 0 4px var(--nv-glow-success-050), 0 0 8px var(--nv-glow-success-030); }
-  50%      { text-shadow: 0 0 8px var(--nv-glow-success-070), 0 0 16px var(--nv-glow-success-050), 0 0 24px var(--nv-glow-success-030); }
+  /* Verde cuando tiene puntos suficientes */
+  color: var(--nv-color-success) !important;
 }
 
 /* ==========================================================
-   79. PP UPGRADE DIALOG — WINDOW & TABS
+   81. PP UPGRADE DIALOG — WINDOW & TABS
    ========================================================== */
 
 .pp-upgrade-dialog-window {
@@ -3635,7 +3655,7 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
-   80. PP UPGRADE DIALOG — SKILLS TAB
+   82. PP UPGRADE DIALOG — SKILLS TAB
    ========================================================== */
 
 .pp-upgrade-dialog-window .pp-skills-header {
@@ -3905,7 +3925,7 @@ a[data-action="delete"] {
 }
 
 /* ==========================================================
-   81. PP UPGRADE DIALOG — STATS & GUIDE TABS
+   83. PP UPGRADE DIALOG — STATS & GUIDE TABS
    ========================================================== */
 
 .pp-upgrade-dialog-window .pp-stats-content {

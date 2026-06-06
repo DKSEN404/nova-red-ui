@@ -83,7 +83,6 @@ Hooks.once("ready", () => {
     }
 
     _refresh() {
-      console.log("PP | _refresh", { changes: this.changes, roleChanges: this.roleChanges, pendingCost: this.totalPendingCost, originalIP: this.originalIP });
       const html = this.element;
       html.find(".pp-skill-row").each((i, row) => {
         const $row = $(row);
@@ -116,7 +115,6 @@ Hooks.once("ready", () => {
       html.find(".pp-total-cost").text(this.totalPendingCost + " PP");
       const hasChanges = Object.keys(this.changes).length > 0 || Object.keys(this.roleChanges).length > 0;
       const shouldDisable = !hasChanges || this.totalPendingCost > this.originalIP;
-      console.log("PP | save state", { hasChanges, totalPendingCost: this.totalPendingCost, originalIP: this.originalIP, shouldDisable });
       html.find(".pp-btn-save").prop("disabled", shouldDisable);
       if (this.totalPendingCost > this.originalIP) {
         html.find(".pp-remaining-value").css("color", "var(--nv-color-danger)");
@@ -151,11 +149,9 @@ Hooks.once("ready", () => {
         const row = $(event.currentTarget).closest(".pp-skill-row");
         const id = row.data("skill-id");
         const currentLevel = parseInt(row.data("current-level"));
-        console.log("PP | skill-inc clicked", { id, currentLevel, prevDelta: this.changes[id] });
-        const delta = (this.changes[id] || 0) + 1;
-        if (currentLevel + delta > 10) {
-          console.log("PP | skill-inc blocked — would exceed level 10", { currentLevel, delta });
-          return;
+          const delta = (this.changes[id] || 0) + 1;
+          if (currentLevel + delta > 10) {
+            return;
         }
         this.changes[id] = delta;
         this._refresh();
@@ -167,10 +163,8 @@ Hooks.once("ready", () => {
         const id = row.data("skill-id");
         const currentLevel = parseInt(row.data("current-level"));
         const curDelta = this.changes[id] || 0;
-        console.log("PP | skill-dec clicked", { id, currentLevel, curDelta });
-        if (curDelta <= 0 && currentLevel === 0) {
-          console.log("PP | skill-dec blocked — already at minimum");
-          return;
+          if (curDelta <= 0 && currentLevel === 0) {
+            return;
         }
         const delta = curDelta - 1;
         if (delta <= 0) {
@@ -186,11 +180,9 @@ Hooks.once("ready", () => {
         const row = $(event.currentTarget).closest(".pp-role-row");
         const id = row.data("role-id");
         const currentRank = parseInt(row.data("current-rank"));
-        console.log("PP | role-inc clicked", { id, currentRank, prevDelta: this.roleChanges[id] });
-        const delta = (this.roleChanges[id] || 0) + 1;
-        if (currentRank + delta > 10) {
-          console.log("PP | role-inc blocked — would exceed rank 10", { currentRank, delta });
-          return;
+          const delta = (this.roleChanges[id] || 0) + 1;
+          if (currentRank + delta > 10) {
+            return;
         }
         this.roleChanges[id] = delta;
         this._refresh();
@@ -202,10 +194,8 @@ Hooks.once("ready", () => {
         const id = row.data("role-id");
         const currentRank = parseInt(row.data("current-rank"));
         const curDelta = this.roleChanges[id] || 0;
-        console.log("PP | role-dec clicked", { id, currentRank, curDelta });
-        if (curDelta <= 0 && currentRank === 0) {
-          console.log("PP | role-dec blocked — already at minimum");
-          return;
+          if (curDelta <= 0 && currentRank === 0) {
+            return;
         }
         const delta = curDelta - 1;
         if (delta <= 0) {
@@ -291,7 +281,7 @@ Hooks.once("ready", () => {
     static get defaultOptions() {
       return foundry.utils.mergeObject(super.defaultOptions, {
         height: 690,
-        width: 625,
+        width: 830,
         resizable: true,
         scrollY: [".tab-content-vertical"],
         tabs: [
