@@ -3624,8 +3624,12 @@ a[data-action="delete"] {
 }
 
 .character-vertical-sheet .profile-header .profile-portrait .pp-notification-btn.pp-has-points {
-  /* Verde cuando tiene puntos suficientes */
+  /* Verde brillante cuando tiene puntos suficientes */
+  --nv-color-success: #00ffaa;
   color: var(--nv-color-success) !important;
+  text-shadow:
+    0 0 4px var(--nv-glow-success-040),
+    0 0 8px var(--nv-glow-success-020) !important;
 }
 
 /* ==========================================================

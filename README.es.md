@@ -59,6 +59,11 @@ https://github.com/DKSEN404/nova-red-ui/releases/latest/download/module.json
 
 ## Changelog
 
+### v1.2.1 — Fix color verde notificación PP *(2026-06-06)*
+- **Fix color notificación PP:** La cruz ahora usa verde brillante (`#00ffaa`) cuando IP ≥ threshold — el verde oscuro anterior (`#609040` del core CPR) era invisible sobre fondos oscuros
+- **Glow verde en notificación PP:** Cuando IP ≥ threshold, el `text-shadow` cambia de ámbar a verde (`--nv-glow-success-*`) para que el color no se opaque con el resplandor ámbar
+- **Console.log de debug eliminado:** Log PP DEBUG de v1.2.0 eliminado (diagnóstico completado)
+
 ### v1.2.0 — Combat Gallery expandido + fix threshold debug *(2026-06-06)*
 - **Columnas de combate más anchas:** `.fight-tab` cambiado de `1fr 1fr 1fr` a `minmax(300px, 1fr)` para que cada sección (heridas, armadura, armas) tenga al menos 300px — texto ya no se solapa
 - **Modo galería en secciones Meat/Net:** Fondo glass agregado a secciones de aptitudes de rol, abilities de interfaz, programas instalados y rezzados en la hoja vertical

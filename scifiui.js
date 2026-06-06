@@ -308,7 +308,6 @@ Hooks.once("ready", () => {
       if (ip >= threshold) {
         data.ppHasPoints = true;
       }
-      console.log("PP DEBUG | IP:", ip, "Threshold:", threshold, "HasPoints:", ip >= threshold);
       return data;
     }
 
